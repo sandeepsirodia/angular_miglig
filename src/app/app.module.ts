@@ -8,6 +8,8 @@ import {MatTableModule} from '@angular/material';
 
 import {HttpModule} from "@angular/http";
 import {MatInputModule} from '@angular/material';
+import {MatSidenavModule} from '@angular/material';
+import {MatMenuModule} from '@angular/material';
 
 
 import { AppComponent } from './app.component';
@@ -24,16 +26,29 @@ import { VideoPlayerComponent } from './video-player/video-player.component';
 import { AudioPlayerComponent } from './audio-player/audio-player.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
 
 
 const appRoutes: Routes = [
    {
       path: '',
-      component: AppComponent
+      component: HomeComponent
    },
    {
       path: 'login',
       component: LoginComponent
+   },
+   {
+      path: 'regions',
+      component: RegionalComponent
+   },
+   {
+      path: 'profile',
+      component: ProfileComponent
+   },
+   {
+      path: 'aboutus',
+      component: AboutusComponent
    }
 ];
 
@@ -53,16 +68,22 @@ const appRoutes: Routes = [
     VideoPlayerComponent,
     AudioPlayerComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    MatSidenavModule,
     HttpModule,
     MatTableModule,
-    MatInputModule
+    MatInputModule,
+    MatSidenavModule,
+    MatMenuModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
