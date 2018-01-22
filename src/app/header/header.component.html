@@ -1,9 +1,15 @@
-<div style="height: 44px; background-color: black; width: 100% !important;">
-   <div class="topnav" id="myTopnav">
-     <a class="active" href="/">Home</a>
-     <a href="regions">Regions</a>
-     <a href="profile">Profile</a>
-     <a href="aboutus">About Us</a>
-     <a href="javascript:void(0);" style="font-size:15px;" class="icon" (click)="myFunction($event)">&#9776;</a>
+<div #header>
+   <div class="topnav row" id="Topnav">
+   		<div class="col-xs-8 col-sm-3 col-md-2 offset-md-1 offset-lg-1 col-lg-3">
+			<a id="miglig_logo_link" routerLink="/" (click)="toggleFunction($event)"><img id='miglig_logo' src="assets/miglig_logo.jpg"></a>
+		</div>
+		<div id="top_bar" class="col-xs-4 col-sm-7 offset-sm-1 col-md-8 offset-md-1 col-lg-6 offset-lg-2">
+			<a></a>
+			<a routerLink="/" (click)="toggleFunction($event)">Home</a>
+			<a routerLink="regions" (click)="toggleFunction($event)">Regions</a>
+			<a routerLink="profile" (click)="toggleFunction($event)">Profile</a>
+			<a routerLink="aboutus" (click)="toggleFunction($event)">About Us</a>
+			<a href="javascript:void(0);" style="font-size:15px; float: right !important;" class="icon" (click)="myFunction($event)">&#9776;</a>
+		</div>
    </div>
 </div>
