@@ -99,7 +99,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\n<app-footer></app-footer>\n\n"
+module.exports = "<div class=\"mainpage\">\n   <app-header style=\"margin: 0px;\"></app-header>\n   <router-outlet></router-outlet>\n   <app-footer ></app-footer>\n</div>\n\n"
 
 /***/ }),
 
@@ -160,6 +160,7 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__audio_player_audio_player_component__ = __webpack_require__("../../../../../src/app/audio-player/audio-player.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__header_header_component__ = __webpack_require__("../../../../../src/app/header/header.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__footer_footer_component__ = __webpack_require__("../../../../../src/app/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -188,14 +189,29 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
 var appRoutes = [
     {
         path: '',
-        component: __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_21__home_home_component__["a" /* HomeComponent */]
     },
     {
         path: 'login',
         component: __WEBPACK_IMPORTED_MODULE_8__login_login_component__["a" /* LoginComponent */]
+    },
+    {
+        path: 'regions',
+        component: __WEBPACK_IMPORTED_MODULE_14__regional_regional_component__["a" /* RegionalComponent */]
+    },
+    {
+        path: 'profile',
+        component: __WEBPACK_IMPORTED_MODULE_16__profile_profile_component__["a" /* ProfileComponent */]
+    },
+    {
+        path: 'aboutus',
+        component: __WEBPACK_IMPORTED_MODULE_10__aboutus_aboutus_component__["a" /* AboutusComponent */]
     }
 ];
 var AppModule = /** @class */ (function () {
@@ -217,16 +233,20 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_17__video_player_video_player_component__["a" /* VideoPlayerComponent */],
                 __WEBPACK_IMPORTED_MODULE_18__audio_player_audio_player_component__["a" /* AudioPlayerComponent */],
                 __WEBPACK_IMPORTED_MODULE_19__header_header_component__["a" /* HeaderComponent */],
-                __WEBPACK_IMPORTED_MODULE_20__footer_footer_component__["a" /* FooterComponent */]
+                __WEBPACK_IMPORTED_MODULE_20__footer_footer_component__["a" /* FooterComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__home_home_component__["a" /* HomeComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* RouterModule */].forRoot(appRoutes),
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MatSidenavModule */],
                 __WEBPACK_IMPORTED_MODULE_6__angular_http__["a" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MatTableModule */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_material__["a" /* MatInputModule */]
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["d" /* MatTableModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["a" /* MatInputModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MatSidenavModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MatMenuModule */],
             ],
             providers: [],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
@@ -321,7 +341,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/footer/footer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  footer works!\n</p>\n"
+module.exports = "\n<div style=\"height: 50px; background-color: black; width: 100% !important; position:absolute; bottom: 0px;\">\n   \n</div>"
 
 /***/ }),
 
@@ -369,7 +389,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "@media screen and (max-width: 638px) {\n  .topnav a:not(:first-child) { \n    display: none;\n  }\n  .topnav a.icon {\n    float: right;\n    display: block;\n  }\n  .topnav.responsive { \n    position: relative;\n  }\n  .topnav.responsive .icon {\n    position: absolute;\n    right: 0;\n    top: 0;\n  }\n  .topnav.responsive a {\n    float: none;\n    display: block;\n    text-align: left;\n  }\n  .topnav #top_bar{\n    margin-top: -37px;\n  }\n  #miglig_logo_link {\n  padding: 0px;\n  padding-top: 20px;\n  padding-left: 15px !important;\n}\n\n}\n\n.topnav {\n  overflow: hidden;\n  background-color: #333;\n}\n\n.topnav a {\n  float: left;\n  display: block;\n  color: #fafafa;\n  text-align: center;\n  padding: 14px 16px;\n  text-decoration: none;\n  font-size: 15px;\n}\n\n.topnav a:hover {\n  color: black;\n}\n\n.active {\n  color: black;\n}\n\n.topnav .icon {\n  display: none;\n  float: right;\n}\n\n#header {\n  height: 44px; \n  background-color: black; \n  width: 100% !important;\n}\n\n#miglig_logo {\n  width: 200px !important;\n}\n\n#miglig_logo_link {\n  padding: 0px;\n  padding-top: 10px;\n  padding-left: 25px;\n}\n\n#top_bar{\n  float: right;\n}", ""]);
 
 // exports
 
@@ -382,7 +402,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  header works!\n</p>\n"
+module.exports = "<div #header>\n   <div class=\"topnav row\" id=\"Topnav\">\n   \t\t<div class=\"col-xs-8 col-sm-3 col-md-2 offset-md-1 offset-lg-1 col-lg-3\">\n\t\t\t<a id=\"miglig_logo_link\" routerLink=\"/\" (click)=\"toggleFunction($event)\"><img id='miglig_logo' src=\"assets/miglig_logo.jpg\"></a>\n\t\t</div>\n\t\t<div id=\"top_bar\" class=\"col-xs-4 col-sm-7 offset-sm-1 col-md-8 offset-md-1 col-lg-6 offset-lg-2\">\n\t\t\t<a></a>\n\t\t\t<a routerLink=\"/\" (click)=\"toggleFunction($event)\">Home</a>\n\t\t\t<a routerLink=\"regions\" (click)=\"toggleFunction($event)\">Regions</a>\n\t\t\t<a routerLink=\"profile\" (click)=\"toggleFunction($event)\">Profile</a>\n\t\t\t<a routerLink=\"aboutus\" (click)=\"toggleFunction($event)\">About Us</a>\n\t\t\t<a href=\"javascript:void(0);\" style=\"font-size:15px; float: right !important;\" class=\"icon\" (click)=\"myFunction($event)\">&#9776;</a>\n\t\t</div>\n   </div>\n</div>\n"
 
 /***/ }),
 
@@ -407,6 +427,23 @@ var HeaderComponent = /** @class */ (function () {
     }
     HeaderComponent.prototype.ngOnInit = function () {
     };
+    HeaderComponent.prototype.myFunction = function (event) {
+        var x = document.getElementById("Topnav");
+        if (x.className === "topnav row") {
+            x.className += " responsive";
+        }
+        else {
+            x.className = "topnav row";
+        }
+    };
+    HeaderComponent.prototype.headerFunction = function () {
+    };
+    HeaderComponent.prototype.toggleFunction = function (event) {
+        var x = document.getElementById("Topnav");
+        if (x.className === "topnav row responsive") {
+            x.className = "topnav row";
+        }
+    };
     HeaderComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-header',
@@ -416,6 +453,67 @@ var HeaderComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], HeaderComponent);
     return HeaderComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/home/home.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/home/home.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  home works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/home/home.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var HomeComponent = /** @class */ (function () {
+    function HomeComponent() {
+    }
+    HomeComponent.prototype.ngOnInit = function () {
+    };
+    HomeComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-home',
+            template: __webpack_require__("../../../../../src/app/home/home.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/home/home.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], HomeComponent);
+    return HomeComponent;
 }());
 
 
