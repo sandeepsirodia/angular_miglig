@@ -29,7 +29,7 @@ import { HomeComponent } from './home/home.component';
 
 import { VgCoreModule } from 'videogular2/core';
 import { VgControlsModule } from 'videogular2/controls';
-import { HashLocationStrategy, LocationStrategy } from '@angular/com{provide: LocationStrategy, useClass: HashLocationStrategy}mon';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const appRoutes: Routes = [
    {
