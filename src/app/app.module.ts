@@ -29,6 +29,7 @@ import { HomeComponent } from './home/home.component';
 
 import { VgCoreModule } from 'videogular2/core';
 import { VgControlsModule } from 'videogular2/controls';
+import { VgOverlayPlayModule } from 'videogular2/overlay-play';
 
 const appRoutes: Routes = [
    {
@@ -91,6 +92,7 @@ const appRoutes: Routes = [
     MatMenuModule,
     VgCoreModule,
     VgControlsModule,
+    VgOverlayPlayModule,
 
   ],
   providers: [],

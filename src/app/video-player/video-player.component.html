@@ -1,27 +1,30 @@
 <vg-player (onPlayerReady)="onPlayerReady($event)" >
-   <vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">
+	<vg-overlay-play></vg-overlay-play>
+    <vg-scrub-bar>
+		<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+		<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+	</vg-scrub-bar>
+	<vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">
       	
-       <vg-scrub-bar>
-           <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-           <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-       </vg-scrub-bar>
-
-       <vg-play-pause></vg-play-pause>
-       <vg-playback-button></vg-playback-button>
- 
-       <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
- 
        
- 
-       <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
- 
-       <vg-mute></vg-mute>
-       <vg-volume></vg-volume>
- 
-       <vg-fullscreen></vg-fullscreen>
-   </vg-controls>
- 
-   <video #media [vgMedia]="media" (click)="onClickPlayPause($event)" id="singleVideo" preload="auto" crossorigin>
-       <source src="http://static.videogular.com/assets/videos/videogular.mp4" type="video/mp4">
-   </video>
+
+		<vg-play-pause></vg-play-pause>
+
+
+		<vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+
+
+		<vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+			<div [style.position]="'relative'" [style.width]="'65%'"  ></div>
+		   <vg-playback-button></vg-playback-button>
+		<vg-mute [style.float]="'right'" ></vg-mute>
+		<vg-volume [style.float]="'right'" ></vg-volume>
+
+		<vg-fullscreen [style.float]="'right'" ></vg-fullscreen>
+	</vg-controls>
+
+	<video #media [vgMedia]="media" (click)="onClickPlayPause($event)" id="singleVideo" preload="auto" crossorigin>
+		<source src="http://static.videogular.com/assets/videos/videogular.mp4" type="video/mp4">
+	</video>
 </vg-player>
