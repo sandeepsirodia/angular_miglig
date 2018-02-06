@@ -27,6 +27,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 
+import { VgCoreModule } from 'videogular2/core';
+import { VgControlsModule } from 'videogular2/controls';
 
 const appRoutes: Routes = [
    {
@@ -48,6 +50,10 @@ const appRoutes: Routes = [
    {
       path: 'aboutus',
       component: AboutusComponent
+   },
+   {
+      path: 'video',
+      component: VideoPlayerComponent
    }
 ];
 
@@ -83,6 +89,8 @@ const appRoutes: Routes = [
     MatInputModule,
     MatSidenavModule,
     MatMenuModule,
+    VgCoreModule,
+    VgControlsModule,
 
   ],
   providers: [],
