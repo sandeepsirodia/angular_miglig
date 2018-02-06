@@ -1,5 +1,5 @@
-<vg-player (onPlayerReady)="onPlayerReady($event)">
-   <vg-controls>
+<vg-player (onPlayerReady)="onPlayerReady($event)" (click)="onClickPlayPause($event)">
+   <vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5">
        <vg-play-pause></vg-play-pause>
        <vg-playback-button></vg-playback-button>
  
