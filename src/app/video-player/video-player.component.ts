@@ -42,30 +42,41 @@ export class VideoPlayerComponent implements OnInit {
 	    
 
 		this.globalListenFunc = this.renderer.listen('document', 'keydown', e => {
-			
+			console.log(e) 
 			if (e.key == ' ' && e.code == 'Space' && api.getDefaultMedia().state == "paused") {
 				this.api.play();
 			}else if (e.key == ' ' && e.code == 'Space' && api.getDefaultMedia().state != "paused"){
 				this.api.pause()
 			}
 
+			if (e.altKey && e.code == 'ArrowRight') {
+				this.api.currentTime += 150;
+			}
+
+			if (e.altKey && e.code == 'ArrowLeft') {
+				this.api.currentTime -= 150;
+			}
+
+			if (e.shiftKey && e.code == 'ArrowRight') {
+				this.api.currentTime += 1;
+			}
+
+			if (e.shiftKey && e.code == 'ArrowLeft') {
+				this.api.currentTime -= 1;
+			}
+
 			if (e.key == 'f' &&  e.key != ' ' ) {
 				this.api.fsAPI.toggleFullscreen();
 			}
-			
-			
-				
-			if (e.code == 'ArrowLeft') {
+							
+			if (e.code == 'ArrowLeft' && !e.shiftKey ) {
 				this.api.currentTime -= 5;
 			}
 
-			if (e.code == 'ArrowRight') {
+			if (e.code == 'ArrowRight' && !e.shiftKey ) {
 				this.api.currentTime += 10;
 			}
 
-			// else{
-			// 	this.api.pause()
-			// }
 			if (e.code == 'ArrowUp'){
 				if (this.api.volume < .95) {
 					this.api.volume = this.api.volume + .05;	
