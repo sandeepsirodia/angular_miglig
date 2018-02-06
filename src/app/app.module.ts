@@ -29,7 +29,6 @@ import { HomeComponent } from './home/home.component';
 
 import { VgCoreModule } from 'videogular2/core';
 import { VgControlsModule } from 'videogular2/controls';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const appRoutes: Routes = [
    {
@@ -94,7 +93,7 @@ const appRoutes: Routes = [
     VgControlsModule,
 
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
