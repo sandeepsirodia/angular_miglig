@@ -99,7 +99,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mainpage\">\n   <app-header style=\"margin: 0px;\"></app-header>\n   <router-outlet></router-outlet>\n   <app-footer ></app-footer>\n</div>\n\n"
+module.exports = "<div class=\"mainpage\">\n   <app-header style=\"margin: 0px;\"></app-header>\n   <router-outlet></router-outlet>\n   <!-- <app-footer ></app-footer> -->\n</div>\n\n"
 
 /***/ }),
 
