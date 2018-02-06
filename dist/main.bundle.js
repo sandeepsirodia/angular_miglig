@@ -167,12 +167,15 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_videogular2_controls___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23_videogular2_controls__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_videogular2_overlay_play__ = __webpack_require__("../../../../videogular2/overlay-play.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_videogular2_overlay_play___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_videogular2_overlay_play__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_videogular2_buffering__ = __webpack_require__("../../../../videogular2/buffering.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_videogular2_buffering___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25_videogular2_buffering__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -263,6 +266,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_22_videogular2_core__["VgCoreModule"],
                 __WEBPACK_IMPORTED_MODULE_23_videogular2_controls__["VgControlsModule"],
                 __WEBPACK_IMPORTED_MODULE_24_videogular2_overlay_play__["VgOverlayPlayModule"],
+                __WEBPACK_IMPORTED_MODULE_25_videogular2_buffering__["VgBufferingModule"],
             ],
             providers: [],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
@@ -1045,7 +1049,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/video-player/video-player.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<vg-player (onPlayerReady)=\"onPlayerReady($event)\" >\n\t<vg-overlay-play></vg-overlay-play>\n    <vg-scrub-bar>\n\t\t<vg-scrub-bar-current-time></vg-scrub-bar-current-time>\n\t\t<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>\n\t</vg-scrub-bar>\n\t<vg-controls [vgAutohide]=\"true\" [vgAutohideTime]=\".5\">\n      \t\n       \n\n\t\t<vg-play-pause></vg-play-pause>\n\n\n\t\t<vg-time-display vgProperty=\"current\" vgFormat=\"mm:ss\"></vg-time-display>\n\n\n\n\t\t<vg-time-display vgProperty=\"total\" vgFormat=\"mm:ss\"></vg-time-display>\n\t\t\t<div [style.position]=\"'relative'\" [style.width]=\"'85%'\"  ></div>\n\t\t   <vg-playback-button></vg-playback-button>\n\t\t<vg-mute [style.float]=\"'right'\" ></vg-mute>\n\t\t<vg-volume [style.float]=\"'right'\" ></vg-volume>\n\n\t\t<vg-fullscreen [style.float]=\"'right'\" ></vg-fullscreen>\n\t</vg-controls>\n\n\t<video #media [vgMedia]=\"media\" (click)=\"onClickPlayPause($event)\" id=\"singleVideo\" preload=\"auto\" crossorigin>\n\t\t<source src=\"http://static.videogular.com/assets/videos/videogular.mp4\" type=\"video/mp4\">\n\t</video>\n</vg-player>\n"
+module.exports = "<vg-player (onPlayerReady)=\"onPlayerReady($event)\"  (dblclick)=\"onDoubleClickFullscreen($event)\" >\n\t<vg-overlay-play ></vg-overlay-play>\n\t<vg-buffering></vg-buffering>\n\n    <vg-scrub-bar>\n\t\t<vg-scrub-bar-current-time></vg-scrub-bar-current-time>\n\t\t<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>\n\t</vg-scrub-bar>\n\t<vg-controls [vgAutohide]=\"true\" [vgAutohideTime]=\".5\">\n      \t\n       \n\n\t\t<vg-play-pause></vg-play-pause>\n\n\n\t\t<vg-time-display vgProperty=\"current\" vgFormat=\"mm:ss\"></vg-time-display>\n\n\n\t\t<vg-scrub-bar style=\"pointer-events: none;\"></vg-scrub-bar>\n\n        <vg-time-display vgProperty=\"left\" vgFormat=\"mm:ss\"></vg-time-display>\n        <vg-time-display vgProperty=\"total\" vgFormat=\"mm:ss\"></vg-time-display>\n\n\t\t<!-- <vg-time-display vgProperty=\"total\" vgFormat=\"mm:ss\"></vg-time-display> -->\n\t\t<!-- <div [style.position]=\"'relative'\" [style.width]=\"'85%'\"  ></div> -->\n\t\t<vg-playback-button></vg-playback-button>\n\t\t<vg-mute [style.float]=\"'right'\" ></vg-mute>\n\t\t<vg-volume [style.float]=\"'right'\" ></vg-volume>\n\n\t\t<vg-fullscreen [style.float]=\"'right'\" ></vg-fullscreen>\n\t</vg-controls>\n\n\t<video #media [vgMedia]=\"media\" id=\"singleVideo\" preload=\"auto\" crossorigin>\n\t\t<source src=\"http://static.videogular.com/assets/videos/videogular.mp4\" type=\"video/mp4\">\n\t</video>\n</vg-player>\n"
 
 /***/ }),
 
@@ -1072,27 +1076,27 @@ var VideoPlayerComponent = /** @class */ (function () {
     }
     VideoPlayerComponent.prototype.ngOnInit = function () {
         this.globalListenFunc = this.renderer.listen('document', 'keypress', function (e) {
-            // console.log(e.code);
         });
     };
     VideoPlayerComponent.prototype.ngOnDestroy = function () {
         // remove listener
         this.globalListenFunc();
     };
-    VideoPlayerComponent.prototype.onClickPlayPause = function (event) {
-        console.log(this.api);
-        if (this.api.state == "playing") {
-            this.api.pause();
-        }
-        else {
-            this.api.play();
-        }
+    VideoPlayerComponent.prototype.onDoubleClickFullscreen = function (event) {
+        this.api.fsAPI.toggleFullscreen();
     };
+    // onClickPlayPause(event){
+    // 	if (this.api.state == "playing"){
+    // 		this.api.pause();
+    // 	}
+    // 	else{
+    // 		this.api.play();
+    // 	}
+    // }
     VideoPlayerComponent.prototype.onPlayerReady = function (api) {
         var _this = this;
         this.api = api;
         this.globalListenFunc = this.renderer.listen('document', 'keydown', function (e) {
-            console.log(e);
             if (e.key == ' ' && e.code == 'Space' && api.getDefaultMedia().state == "paused") {
                 _this.api.play();
             }
@@ -1137,7 +1141,6 @@ var VideoPlayerComponent = /** @class */ (function () {
                 }
             }
         });
-        // console.log(this.api.getDefaultMedia())
         this.api.getDefaultMedia().subscriptions.ended.subscribe(function () {
             _this.api.getDefaultMedia().currentTime = 0;
         });

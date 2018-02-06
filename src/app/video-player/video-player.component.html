@@ -1,5 +1,7 @@
-<vg-player (onPlayerReady)="onPlayerReady($event)" >
-	<vg-overlay-play></vg-overlay-play>
+<vg-player (onPlayerReady)="onPlayerReady($event)"  (dblclick)="onDoubleClickFullscreen($event)" >
+	<vg-overlay-play ></vg-overlay-play>
+	<vg-buffering></vg-buffering>
+
     <vg-scrub-bar>
 		<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
 		<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
@@ -14,17 +16,21 @@
 		<vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
 
 
+		<vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
 
-		<vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
-			<div [style.position]="'relative'" [style.width]="'85%'"  ></div>
-		   <vg-playback-button></vg-playback-button>
+        <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+        <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+		<!-- <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display> -->
+		<!-- <div [style.position]="'relative'" [style.width]="'85%'"  ></div> -->
+		<vg-playback-button></vg-playback-button>
 		<vg-mute [style.float]="'right'" ></vg-mute>
 		<vg-volume [style.float]="'right'" ></vg-volume>
 
 		<vg-fullscreen [style.float]="'right'" ></vg-fullscreen>
 	</vg-controls>
 
-	<video #media [vgMedia]="media" (click)="onClickPlayPause($event)" id="singleVideo" preload="auto" crossorigin>
+	<video #media [vgMedia]="media" id="singleVideo" preload="auto" crossorigin>
 		<source src="http://static.videogular.com/assets/videos/videogular.mp4" type="video/mp4">
 	</video>
 </vg-player>

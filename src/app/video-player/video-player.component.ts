@@ -16,7 +16,6 @@ export class VideoPlayerComponent implements OnInit {
 
 	ngOnInit() {
 		this.globalListenFunc = this.renderer.listen('document', 'keypress', e => {
-			// console.log(e.code);
 			
 		});
 	}
@@ -26,23 +25,25 @@ export class VideoPlayerComponent implements OnInit {
 		this.globalListenFunc();
 	}
 
-	onClickPlayPause(event){
-		console.log(this.api)
-		if (this.api.state == "playing"){
-			this.api.pause();
-		}
-		else{
-			this.api.play();
-		}
-		
+	onDoubleClickFullscreen(event: MouseEvent): void {
+		this.api.fsAPI.toggleFullscreen();
 	}
+
+	// onClickPlayPause(event){
+	// 	if (this.api.state == "playing"){
+	// 		this.api.pause();
+	// 	}
+	// 	else{
+	// 		this.api.play();
+	// 	}
+		
+	// }
 
 	onPlayerReady(api:VgAPI) {
 	    this.api = api;
 	    
 
 		this.globalListenFunc = this.renderer.listen('document', 'keydown', e => {
-			console.log(e) 
 			if (e.key == ' ' && e.code == 'Space' && api.getDefaultMedia().state == "paused") {
 				this.api.play();
 			}else if (e.key == ' ' && e.code == 'Space' && api.getDefaultMedia().state != "paused"){
@@ -95,7 +96,6 @@ export class VideoPlayerComponent implements OnInit {
 			}
 		});
 	    
-	    // console.log(this.api.getDefaultMedia())
 	    this.api.getDefaultMedia().subscriptions.ended.subscribe(
 	        () => {
 	            this.api.getDefaultMedia().currentTime = 0;
