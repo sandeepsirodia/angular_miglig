@@ -418,7 +418,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div #header>\n   <div class=\"topnav row\" id=\"Topnav\">\n   \t\t<div class=\"col-xs-8 col-sm-3 col-md-2 offset-md-1 offset-lg-1 col-lg-3\">\n\t\t\t<a id=\"miglig_logo_link\" routerLink=\"/\" (click)=\"toggleFunction($event)\"><img id='miglig_logo' src=\"assets/miglig_logo.jpg\"></a>\n\t\t</div>\n\t\t<div id=\"top_bar\" class=\"col-xs-4 col-sm-7 offset-sm-1 col-md-8 offset-md-1 col-lg-6 offset-lg-2\">\n\t\t\t<a></a>\n\t\t\t<a routerLink=\"/\" (click)=\"toggleFunction($event)\">Home</a>\n\t\t\t<a routerLink=\"regions\" (click)=\"toggleFunction($event)\">Regions</a>\n\t\t\t<a routerLink=\"profile\" (click)=\"toggleFunction($event)\">Profile</a>\n\t\t\t<a routerLink=\"aboutus\" (click)=\"toggleFunction($event)\">About Us</a>\n\t\t\t<a href=\"javascript:void(0);\" style=\"font-size:15px; float: right !important;\" class=\"icon\" (click)=\"myFunction($event)\">&#9776;</a>\n\t\t</div>\n   </div>\n</div>\n"
+module.exports = "<div #header>\n   <div class=\"topnav row\" id=\"Topnav\">\n   \t\t<div class=\"col-xs-8 col-sm-3 col-md-2 offset-md-1 offset-lg-1 col-lg-3\">\n\t\t\t<a style=\"padding-left:0px !important;\" id=\"miglig_logo_link\" routerLink=\"/\" (click)=\"toggleFunction($event)\"><img id='miglig_logo' src=\"assets/miglig_logo.jpg\"></a>\n\t\t</div>\n\t\t<div id=\"top_bar\" class=\"col-xs-4 col-sm-7 offset-sm-1 col-md-8 offset-md-1 col-lg-6 offset-lg-2\">\n\t\t\t<a></a>\n\t\t\t<a routerLink=\"/\" (click)=\"toggleFunction($event)\">Home</a>\n\t\t\t<a routerLink=\"regions\" (click)=\"toggleFunction($event)\">Regions</a>\n\t\t\t<a routerLink=\"profile\" (click)=\"toggleFunction($event)\">Profile</a>\n\t\t\t<a routerLink=\"aboutus\" (click)=\"toggleFunction($event)\">About Us</a>\n\t\t\t<a href=\"javascript:void(0);\" style=\"font-size:15px; float: right !important; padding-right:0px;\" class=\"icon\" (click)=\"myFunction($event)\">&#9776;</a>\n\t\t</div>\n   </div>\n</div>\n"
 
 /***/ }),
 
@@ -496,7 +496,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  home works!\n</p>\n"
+module.exports = "<div class=\"row\" [style.margin-top]=\"'40px'\">\n\t<div class=\"offset-lg-2 offset-md-2 offset-sm-2 col-lg-8 col-md-8 col-sm-8 col-xs-12\">\n\t\t<app-video-player></app-video-player>\n\t</div>\n</div>\n"
 
 /***/ }),
 
@@ -1045,7 +1045,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/video-player/video-player.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<vg-player (onPlayerReady)=\"onPlayerReady($event)\" >\n\t<vg-overlay-play></vg-overlay-play>\n    <vg-scrub-bar>\n\t\t<vg-scrub-bar-current-time></vg-scrub-bar-current-time>\n\t\t<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>\n\t</vg-scrub-bar>\n\t<vg-controls [vgAutohide]=\"true\" [vgAutohideTime]=\"1.5\">\n      \t\n       \n\n\t\t<vg-play-pause></vg-play-pause>\n\n\n\t\t<vg-time-display vgProperty=\"current\" vgFormat=\"mm:ss\"></vg-time-display>\n\n\n\n\t\t<vg-time-display vgProperty=\"total\" vgFormat=\"mm:ss\"></vg-time-display>\n\t\t\t<div [style.position]=\"'relative'\" [style.width]=\"'65%'\"  ></div>\n\t\t   <vg-playback-button></vg-playback-button>\n\t\t<vg-mute [style.float]=\"'right'\" ></vg-mute>\n\t\t<vg-volume [style.float]=\"'right'\" ></vg-volume>\n\n\t\t<vg-fullscreen [style.float]=\"'right'\" ></vg-fullscreen>\n\t</vg-controls>\n\n\t<video #media [vgMedia]=\"media\" (click)=\"onClickPlayPause($event)\" id=\"singleVideo\" preload=\"auto\" crossorigin>\n\t\t<source src=\"http://static.videogular.com/assets/videos/videogular.mp4\" type=\"video/mp4\">\n\t</video>\n</vg-player>\n"
+module.exports = "<vg-player (onPlayerReady)=\"onPlayerReady($event)\" >\n\t<vg-overlay-play></vg-overlay-play>\n    <vg-scrub-bar>\n\t\t<vg-scrub-bar-current-time></vg-scrub-bar-current-time>\n\t\t<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>\n\t</vg-scrub-bar>\n\t<vg-controls [vgAutohide]=\"true\" [vgAutohideTime]=\"1.5\">\n      \t\n       \n\n\t\t<vg-play-pause></vg-play-pause>\n\n\n\t\t<vg-time-display vgProperty=\"current\" vgFormat=\"mm:ss\"></vg-time-display>\n\n\n\n\t\t<vg-time-display vgProperty=\"total\" vgFormat=\"mm:ss\"></vg-time-display>\n\t\t\t<div [style.position]=\"'relative'\" [style.width]=\"'85%'\"  ></div>\n\t\t   <vg-playback-button></vg-playback-button>\n\t\t<vg-mute [style.float]=\"'right'\" ></vg-mute>\n\t\t<vg-volume [style.float]=\"'right'\" ></vg-volume>\n\n\t\t<vg-fullscreen [style.float]=\"'right'\" ></vg-fullscreen>\n\t</vg-controls>\n\n\t<video #media [vgMedia]=\"media\" (click)=\"onClickPlayPause($event)\" id=\"singleVideo\" preload=\"auto\" crossorigin>\n\t\t<source src=\"http://static.videogular.com/assets/videos/videogular.mp4\" type=\"video/mp4\">\n\t</video>\n</vg-player>\n"
 
 /***/ }),
 
