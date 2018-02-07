@@ -15,9 +15,7 @@ export class VideoPlayerComponent implements OnInit {
 	constructor(private renderer: Renderer2) {}
 
 	ngOnInit() {
-		this.globalListenFunc = this.renderer.listen('document', 'keypress', e => {
-			
-		});
+		
 	}
 
 	ngOnDestroy() {
@@ -27,21 +25,15 @@ export class VideoPlayerComponent implements OnInit {
 
 	onDoubleClickFullscreen(event: MouseEvent): void {
 		this.api.fsAPI.toggleFullscreen();
+		console.log(this)
 	}
 
-	// onClickPlayPause(event){
-	// 	if (this.api.state == "playing"){
-	// 		this.api.pause();
-	// 	}
-	// 	else{
-	// 		this.api.play();
-	// 	}
-		
-	// }
 
 	onPlayerReady(api:VgAPI) {
 	    this.api = api;
-	    
+	    console.log(this)
+	    console.log(this.api.$$seek(api.getDefaultMedia(), .5, false))
+	    // this.api.seek()
 
 		this.globalListenFunc = this.renderer.listen('document', 'keydown', e => {
 			if (e.key == ' ' && e.code == 'Space' && api.getDefaultMedia().state == "paused") {

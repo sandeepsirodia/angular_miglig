@@ -3,30 +3,31 @@
 	<vg-buffering></vg-buffering>
 
     <vg-scrub-bar>
+    	<vg-scrub-bar-cue-points></vg-scrub-bar-cue-points>
 		<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
 		<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
 	</vg-scrub-bar>
-	<vg-controls [vgAutohide]="true" [vgAutohideTime]=".5">
-      	
+	<vg-controls [vgAutohide]="true" [vgAutohideTime]=".5" [style.background-color]="'rgba(0, 0, 0, 0.1)'">
+		      	
        
 
 		<vg-play-pause></vg-play-pause>
-
+		<vg-mute ></vg-mute>
+		<vg-volume ></vg-volume>
 
 		<vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
 
 
 		<vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
 
-        <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+        <!-- <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display> -->
         <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
 
 		<!-- <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display> -->
 		<!-- <div [style.position]="'relative'" [style.width]="'85%'"  ></div> -->
 		<vg-playback-button></vg-playback-button>
-		<vg-mute [style.float]="'right'" ></vg-mute>
-		<vg-volume [style.float]="'right'" ></vg-volume>
-
+		
+		<vg-track-selector [vgFor]="singleVideo"></vg-track-selector>
 		<vg-fullscreen [style.float]="'right'" ></vg-fullscreen>
 	</vg-controls>
 

@@ -169,12 +169,15 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_videogular2_overlay_play___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_videogular2_overlay_play__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_videogular2_buffering__ = __webpack_require__("../../../../videogular2/buffering.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_videogular2_buffering___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25_videogular2_buffering__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_videogular2_streaming__ = __webpack_require__("../../../../videogular2/streaming.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_videogular2_streaming___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_26_videogular2_streaming__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -267,6 +270,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_23_videogular2_controls__["VgControlsModule"],
                 __WEBPACK_IMPORTED_MODULE_24_videogular2_overlay_play__["VgOverlayPlayModule"],
                 __WEBPACK_IMPORTED_MODULE_25_videogular2_buffering__["VgBufferingModule"],
+                __WEBPACK_IMPORTED_MODULE_26_videogular2_streaming__["VgStreamingModule"],
             ],
             providers: [],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
@@ -409,7 +413,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "@media screen and (max-width: 638px) {\n  .topnav a:not(:first-child) { \n    display: none;\n  }\n  .topnav a.icon {\n    float: right;\n    display: block;\n  }\n  .topnav.responsive { \n    position: relative;\n  }\n  .topnav.responsive .icon {\n    position: absolute;\n    right: 0;\n    top: 0;\n  }\n  .topnav.responsive a {\n    float: none;\n    display: block;\n    text-align: left;\n  }\n  .topnav #top_bar{\n    margin-top: -37px;\n  }\n  #miglig_logo_link {\n  padding: 0px;\n  padding-top: 20px;\n  padding-left: 15px !important;\n}\n\n}\n\n.topnav {\n  overflow: hidden;\n  background-color: #333;\n}\n\n.topnav a {\n  float: left;\n  display: block;\n  color: #fafafa;\n  text-align: center;\n  padding: 14px 16px;\n  text-decoration: none;\n  font-size: 15px;\n}\n\n.topnav a:hover {\n  color: black;\n}\n\n.active {\n  color: black;\n}\n\n.topnav .icon {\n  display: none;\n  float: right;\n}\n\n#header {\n  height: 44px; \n  background-color: black; \n  width: 100% !important;\n}\n\n#miglig_logo {\n  width: 200px !important;\n}\n\n#miglig_logo_link {\n  padding: 0px;\n  padding-top: 10px;\n  padding-left: 25px;\n}\n\n#top_bar{\n  float: right;\n}", ""]);
+exports.push([module.i, "@media screen and (max-width: 638px) {\n  .topnav a:not(:first-child) { \n    display: none;\n  }\n  .topnav a.icon {\n    float: right;\n    display: block;\n  }\n  .topnav.responsive { \n    position: relative;\n  }\n  .topnav.responsive .icon {\n    position: absolute;\n    right: 0;\n    top: 0;\n  }\n  .topnav.responsive a {\n    float: none;\n    display: block;\n    text-align: left;\n  }\n  .topnav #top_bar{\n    margin-top: -37px;\n  }\n  #miglig_logo_link {\n  padding: 0px;\n  padding-top: 20px;\n  padding-left: 15px !important;\n}\n\n}\n\n.topnav {\n  overflow: hidden;\n  background-color: #333;\n}\n\n.topnav a {\n  float: left;\n  display: block;\n  color: #fafafa;\n  text-align: center;\n  padding: 14px 16px;\n  text-decoration: none;\n  font-size: 15px;\n}\n\n.topnav a:hover {\n  color: black;\n}\n\n.active {\n  color: black;\n}\n\n.topnav .icon {\n  display: none;\n  float: right;\n}\n\n#header {\n  height: 44px; \n  background-color: black; \n  width: 100% !important;\n}\n\n#miglig_logo {\n  width: 125px !important;\n}\n\n#miglig_logo_link {\n  padding: 0px;\n  padding-top: 10px;\n  padding-left: 25px;\n}\n\n#top_bar{\n  float: right;\n}", ""]);
 
 // exports
 
@@ -422,7 +426,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div #header>\n   <div class=\"topnav row\" id=\"Topnav\">\n   \t\t<div class=\"col-xs-8 col-sm-3 col-md-2 offset-md-1 offset-lg-1 col-lg-3\">\n\t\t\t<a style=\"padding-left:0px !important; \" id=\"miglig_logo_link\" routerLink=\"/\" (click)=\"toggleFunction($event)\"><img id='miglig_logo' src=\"assets/miglig_logo.jpg\"></a>\n\t\t</div>\n\t\t<div id=\"top_bar\" class=\"col-xs-4 col-sm-7 offset-sm-1 col-md-8 offset-md-1 col-lg-6 offset-lg-2\">\n\t\t\t<a></a>\n\t\t\t<a routerLink=\"/\" (click)=\"toggleFunction($event)\">Home</a>\n\t\t\t<a routerLink=\"regions\" (click)=\"toggleFunction($event)\">Regions</a>\n\t\t\t<a routerLink=\"profile\" (click)=\"toggleFunction($event)\">Profile</a>\n\t\t\t<a routerLink=\"aboutus\" (click)=\"toggleFunction($event)\">About Us</a>\n\t\t\t<a href=\"javascript:void(0);\" style=\"font-size:15px; float: right !important; padding-right:0px;\" class=\"icon\" (click)=\"myFunction($event)\">&#9776;</a>\n\t\t</div>\n   </div>\n</div>\n"
+module.exports = "<div #header>\n   <div class=\"topnav row\" id=\"Topnav\">\n   \t\t<div class=\"col-xs-8 col-sm-3 col-md-2 offset-md-1 offset-lg-1 col-lg-3\">\n\t\t\t<a style=\"padding-left:0px !important; \" id=\"miglig_logo_link\" routerLink=\"/\" (click)=\"toggleFunction($event)\"><img id='miglig_logo' src=\"assets/logo.png\"></a>\n\t\t</div>\n\t\t<div id=\"top_bar\" class=\"col-xs-4 col-sm-7 offset-sm-1 col-md-8 offset-md-1 col-lg-6 offset-lg-2\">\n\t\t\t<a></a>\n\t\t\t<a routerLink=\"/\" (click)=\"toggleFunction($event)\">Home</a>\n\t\t\t<a routerLink=\"regions\" (click)=\"toggleFunction($event)\">Regions</a>\n\t\t\t<a routerLink=\"profile\" (click)=\"toggleFunction($event)\">Profile</a>\n\t\t\t<a routerLink=\"aboutus\" (click)=\"toggleFunction($event)\">About Us</a>\n\t\t\t<a href=\"javascript:void(0);\" style=\"font-size:15px; float: right !important; padding-right:0px;\" class=\"icon\" (click)=\"myFunction($event)\">&#9776;</a>\n\t\t</div>\n   </div>\n</div>\n"
 
 /***/ }),
 
@@ -500,7 +504,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\" [style.margin-top]=\"'40px'\">\n\t<div class=\"offset-lg-2 offset-md-2 offset-sm-2 col-lg-8 col-md-8 col-sm-8 col-xs-12\">\n\t\t<app-video-player></app-video-player>\n\t</div>\n</div>\n"
+module.exports = "<div class=\"row\" [style.margin-top]=\"'40px'\">\n\t<div class=\"offset-lg-2 offset-md-2 offset-sm-1 col-lg-8 col-md-8 col-sm-10 col-xs-12\">\n\t\t<app-video-player></app-video-player>\n\t</div>\n</div>\n"
 
 /***/ }),
 
@@ -1049,7 +1053,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/video-player/video-player.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<vg-player (onPlayerReady)=\"onPlayerReady($event)\"  (dblclick)=\"onDoubleClickFullscreen($event)\" >\n\t<vg-overlay-play ></vg-overlay-play>\n\t<vg-buffering></vg-buffering>\n\n    <vg-scrub-bar>\n\t\t<vg-scrub-bar-current-time></vg-scrub-bar-current-time>\n\t\t<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>\n\t</vg-scrub-bar>\n\t<vg-controls [vgAutohide]=\"true\" [vgAutohideTime]=\".5\">\n      \t\n       \n\n\t\t<vg-play-pause></vg-play-pause>\n\n\n\t\t<vg-time-display vgProperty=\"current\" vgFormat=\"mm:ss\"></vg-time-display>\n\n\n\t\t<vg-scrub-bar style=\"pointer-events: none;\"></vg-scrub-bar>\n\n        <vg-time-display vgProperty=\"left\" vgFormat=\"mm:ss\"></vg-time-display>\n        <vg-time-display vgProperty=\"total\" vgFormat=\"mm:ss\"></vg-time-display>\n\n\t\t<!-- <vg-time-display vgProperty=\"total\" vgFormat=\"mm:ss\"></vg-time-display> -->\n\t\t<!-- <div [style.position]=\"'relative'\" [style.width]=\"'85%'\"  ></div> -->\n\t\t<vg-playback-button></vg-playback-button>\n\t\t<vg-mute [style.float]=\"'right'\" ></vg-mute>\n\t\t<vg-volume [style.float]=\"'right'\" ></vg-volume>\n\n\t\t<vg-fullscreen [style.float]=\"'right'\" ></vg-fullscreen>\n\t</vg-controls>\n\n\t<video #media [vgMedia]=\"media\" id=\"singleVideo\" preload=\"auto\" crossorigin>\n\t\t<source src=\"http://static.videogular.com/assets/videos/videogular.mp4\" type=\"video/mp4\">\n\t</video>\n</vg-player>\n"
+module.exports = "<vg-player (onPlayerReady)=\"onPlayerReady($event)\"  (dblclick)=\"onDoubleClickFullscreen($event)\" >\n\t<vg-overlay-play ></vg-overlay-play>\n\t<vg-buffering></vg-buffering>\n\n    <vg-scrub-bar>\n    \t<vg-scrub-bar-cue-points></vg-scrub-bar-cue-points>\n\t\t<vg-scrub-bar-current-time></vg-scrub-bar-current-time>\n\t\t<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>\n\t</vg-scrub-bar>\n\t<vg-controls [vgAutohide]=\"true\" [vgAutohideTime]=\".5\" [style.background-color]=\"'rgba(0, 0, 0, 0.1)'\">\n\t\t      \t\n       \n\n\t\t<vg-play-pause></vg-play-pause>\n\t\t<vg-mute ></vg-mute>\n\t\t<vg-volume ></vg-volume>\n\n\t\t<vg-time-display vgProperty=\"current\" vgFormat=\"mm:ss\"></vg-time-display>\n\n\n\t\t<vg-scrub-bar style=\"pointer-events: none;\"></vg-scrub-bar>\n\n        <!-- <vg-time-display vgProperty=\"left\" vgFormat=\"mm:ss\"></vg-time-display> -->\n        <vg-time-display vgProperty=\"total\" vgFormat=\"mm:ss\"></vg-time-display>\n\n\t\t<!-- <vg-time-display vgProperty=\"total\" vgFormat=\"mm:ss\"></vg-time-display> -->\n\t\t<!-- <div [style.position]=\"'relative'\" [style.width]=\"'85%'\"  ></div> -->\n\t\t<vg-playback-button></vg-playback-button>\n\t\t\n\t\t<vg-track-selector [vgFor]=\"singleVideo\"></vg-track-selector>\n\t\t<vg-fullscreen [style.float]=\"'right'\" ></vg-fullscreen>\n\t</vg-controls>\n\n\t<video #media [vgMedia]=\"media\" id=\"singleVideo\" preload=\"auto\" crossorigin>\n\t\t<source src=\"http://static.videogular.com/assets/videos/videogular.mp4\" type=\"video/mp4\">\n\t</video>\n</vg-player>\n"
 
 /***/ }),
 
@@ -1075,8 +1079,6 @@ var VideoPlayerComponent = /** @class */ (function () {
         this.preload = 'auto';
     }
     VideoPlayerComponent.prototype.ngOnInit = function () {
-        this.globalListenFunc = this.renderer.listen('document', 'keypress', function (e) {
-        });
     };
     VideoPlayerComponent.prototype.ngOnDestroy = function () {
         // remove listener
@@ -1084,18 +1086,14 @@ var VideoPlayerComponent = /** @class */ (function () {
     };
     VideoPlayerComponent.prototype.onDoubleClickFullscreen = function (event) {
         this.api.fsAPI.toggleFullscreen();
+        console.log(this);
     };
-    // onClickPlayPause(event){
-    // 	if (this.api.state == "playing"){
-    // 		this.api.pause();
-    // 	}
-    // 	else{
-    // 		this.api.play();
-    // 	}
-    // }
     VideoPlayerComponent.prototype.onPlayerReady = function (api) {
         var _this = this;
         this.api = api;
+        console.log(this);
+        console.log(this.api.$$seek(api.getDefaultMedia(), .5, false));
+        // this.api.seek()
         this.globalListenFunc = this.renderer.listen('document', 'keydown', function (e) {
             if (e.key == ' ' && e.code == 'Space' && api.getDefaultMedia().state == "paused") {
                 _this.api.play();
