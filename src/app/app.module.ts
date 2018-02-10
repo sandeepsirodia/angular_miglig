@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Directive } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes} from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material';
@@ -9,9 +9,11 @@ import { HttpModule } from "@angular/http";
 import { MatInputModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material';
 import { MatMenuModule } from '@angular/material';
+import { FormsModule }   from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { HttpApiService } from './http-api.service';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
@@ -32,6 +34,7 @@ import { VgControlsModule } from 'videogular2/controls';
 import { VgOverlayPlayModule } from 'videogular2/overlay-play';
 import { VgBufferingModule } from "videogular2/buffering";
 import { VgStreamingModule } from "videogular2/streaming";
+import { AppFieldErrorDisplayComponent } from './app-field-error-display/app-field-error-display.component';
 
 const appRoutes: Routes = [
    {
@@ -57,7 +60,11 @@ const appRoutes: Routes = [
    {
       path: 'video',
       component: VideoPlayerComponent
-   }
+   },
+   {
+      path: 'signup',
+      component: SignupComponent
+   },
 ];
 
 
@@ -79,10 +86,12 @@ const appRoutes: Routes = [
     AudioPlayerComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    AppFieldErrorDisplayComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes, { useHash: false }),
     ReactiveFormsModule,
     BrowserAnimationsModule,
@@ -97,9 +106,10 @@ const appRoutes: Routes = [
     VgOverlayPlayModule,
     VgBufferingModule,
     VgStreamingModule,
+    HttpClientModule,
 
   ],
-  providers: [],
+  providers: [HttpApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

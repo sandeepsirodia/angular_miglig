@@ -1,10 +1,11 @@
-@media screen and (max-width: 638px) {
+@media screen and (max-width: 725px) {
   .topnav a:not(:first-child) { 
     display: none;
   }
   .topnav a.icon {
     float: right;
     display: block;
+    margin-top: 32px;
   }
   .topnav.responsive { 
     position: relative;
@@ -23,10 +24,10 @@
     margin-top: -37px;
   }
   #miglig_logo_link {
-  padding: 0px;
-  padding-top: 20px;
-  padding-left: 15px !important;
-}
+    padding: 0px;
+    padding-top: 20px;
+    padding-left: 15px !important;
+  }
 
 }
 

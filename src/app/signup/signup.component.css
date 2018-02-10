@@ -1,0 +1,17 @@
+#signup{
+	padding-top: 30px;
+}
+
+.control-label.required:after { 
+  color: #d00;
+  content: "*";
+  position: absolute;
+  margin-left: 5px;
+  top:7px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #439419;
+    border-color: #439419;
+}
