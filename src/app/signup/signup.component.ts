@@ -13,10 +13,6 @@ import {Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
  
-const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
-@Injectable()
 
 
 @Component({
@@ -30,7 +26,7 @@ export class SignupComponent implements OnInit  {
   private formSubmitAttempt: boolean;
   apiRoot: string = "http://api.miglig.com/api/user/register/";
 
-  constructor(private formBuilder: FormBuilder, private http:HttpClient) { }
+  constructor(private formBuilder: FormBuilder, private httpClient:HttpClient) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -61,7 +57,7 @@ export class SignupComponent implements OnInit  {
 			let api_data = f.value
 			console.log(api_data)
 			// apis.signup_api(api_data)
-			return this.http.post(this.apiRoot, api_data).subscribe(res => console.log(res));
+			this.httpClient.post( "http://api.miglig.com/api/user/register/", api_data).subscribe((res : any) => console.log(res));
 			
 		} else {
 			this.validateAllFormFields(this.form); //{7}

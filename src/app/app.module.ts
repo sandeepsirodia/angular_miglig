@@ -35,6 +35,7 @@ import { VgOverlayPlayModule } from 'videogular2/overlay-play';
 import { VgBufferingModule } from "videogular2/buffering";
 import { VgStreamingModule } from "videogular2/streaming";
 import { AppFieldErrorDisplayComponent } from './app-field-error-display/app-field-error-display.component';
+import { InterceptorModule} from './interceptor.module';
 
 const appRoutes: Routes = [
    {
@@ -107,6 +108,7 @@ const appRoutes: Routes = [
     VgBufferingModule,
     VgStreamingModule,
     HttpClientModule,
+    InterceptorModule,
 
   ],
   providers: [HttpApiService],

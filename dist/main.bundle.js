@@ -178,23 +178,29 @@ module.exports = "<div class=\"mainpage\">\n   <app-header style=\"margin: 0px;\
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
-        this.title = 'app';
+    function AppComponent(httpClient) {
+        this.httpClient = httpClient;
     }
     AppComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-root',
             template: __webpack_require__("../../../../../src/app/app.component.html"),
             styles: [__webpack_require__("../../../../../src/app/app.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -243,12 +249,14 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28_videogular2_streaming__ = __webpack_require__("../../../../videogular2/streaming.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28_videogular2_streaming___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_28_videogular2_streaming__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__app_field_error_display_app_field_error_display_component__ = __webpack_require__("../../../../../src/app/app-field-error-display/app-field-error-display.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__interceptor_module__ = __webpack_require__("../../../../../src/app/interceptor.module.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -353,7 +361,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_26_videogular2_overlay_play__["VgOverlayPlayModule"],
                 __WEBPACK_IMPORTED_MODULE_27_videogular2_buffering__["VgBufferingModule"],
                 __WEBPACK_IMPORTED_MODULE_28_videogular2_streaming__["VgStreamingModule"],
-                __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["c" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_30__interceptor_module__["a" /* InterceptorModule */],
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_9__http_api_service__["a" /* HttpApiService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
@@ -646,7 +655,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var httpOptions = {
-    headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({ 'Content-Type': 'application/json' })
+    headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpHeaders */]({ 'Content-Type': 'application/json' })
 };
 var HttpApiService = /** @class */ (function () {
     function HttpApiService(http) {
@@ -659,9 +668,58 @@ var HttpApiService = /** @class */ (function () {
     };
     HttpApiService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
     ], HttpApiService);
     return HttpApiService;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/interceptor.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export HttpsRequestInterceptor */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InterceptorModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_do__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/do.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var HttpsRequestInterceptor = /** @class */ (function () {
+    function HttpsRequestInterceptor() {
+    }
+    HttpsRequestInterceptor.prototype.intercept = function (req, next) {
+        var dupReq = req.clone({ headers: req.headers.set('Access-Control-Allow-Origin', 'http://www.miglig.com') });
+        return next.handle(dupReq);
+    };
+    HttpsRequestInterceptor = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])()
+    ], HttpsRequestInterceptor);
+    return HttpsRequestInterceptor;
+}());
+
+;
+var InterceptorModule = /** @class */ (function () {
+    function InterceptorModule() {
+    }
+    InterceptorModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            providers: [
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HTTP_INTERCEPTORS */], useClass: HttpsRequestInterceptor, multi: true }
+            ]
+        })
+    ], InterceptorModule);
+    return InterceptorModule;
 }());
 
 
@@ -1079,14 +1137,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-var httpOptions = {
-    headers: new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpHeaders */]({ 'Content-Type': 'application/json' })
-};
 var SignupComponent = /** @class */ (function () {
-    function SignupComponent(formBuilder, http) {
+    function SignupComponent(formBuilder, httpClient) {
         this.formBuilder = formBuilder;
-        this.http = http;
+        this.httpClient = httpClient;
         this.apiRoot = "http://api.miglig.com/api/user/register/";
     }
     SignupComponent.prototype.ngOnInit = function () {
@@ -1115,7 +1169,7 @@ var SignupComponent = /** @class */ (function () {
             var api_data = f.value;
             console.log(api_data);
             // apis.signup_api(api_data)
-            return this.http.post(this.apiRoot, api_data).subscribe(function (res) { return console.log(res); });
+            this.httpClient.post("http://api.miglig.com/api/user/register/", api_data).subscribe(function (res) { return console.log(res); });
         }
         else {
             this.validateAllFormFields(this.form); //{7}
@@ -1148,13 +1202,12 @@ var SignupComponent = /** @class */ (function () {
         this.formSubmitAttempt = false;
     };
     SignupComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-signup',
             template: __webpack_require__("../../../../../src/app/signup/signup.component.html"),
             styles: [__webpack_require__("../../../../../src/app/signup/signup.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["b" /* HttpClient */]])
     ], SignupComponent);
     return SignupComponent;
 }());
