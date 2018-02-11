@@ -62,7 +62,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\nbody{\n\tmargin: 0px !important;\n\tmax-width: 100% !important;\n}\n\n.row { margin: 0; padding: 0 }\n\n@media screen and (max-width: 638px) {\n\t\n}\n\n.ng-valid[required], .ng-valid.required  {\n  border-left: 5px solid #42A948; /* green */\n}\n\n.ng-invalid:not(form)  {\n  border-left: 5px solid #a94442; /* red */\n}", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\nbody{\n\tmargin: 0px !important;\n\tmax-width: 100% !important;\n}\n\n.row { margin: 0; padding: 0 }\n\n@media screen and (max-width: 638px) {\n\t#loader {\n\t\tmargin-top :170px;\n\t}\n}\n\n@media screen and (min-width: 639px) {\n\t#loader {\n\t\tmargin-top :400px;\n\t}\n}\n\n.ng-valid[required], .ng-valid.required  {\n  border-left: 5px solid #42A948; /* green */\n}\n\n.ng-invalid:not(form)  {\n  border-left: 5px solid #a94442; /* red */\n}\n\n", ""]);
 
 // exports
 

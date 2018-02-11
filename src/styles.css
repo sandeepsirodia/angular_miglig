@@ -7,7 +7,16 @@ body{
 .row { margin: 0; padding: 0 }
 
 @media screen and (max-width: 638px) {
-	
+	#loader {
+		margin-top :170px;
+	}
+}
+
+
+@media screen and (min-width: 639px) {
+	#loader {
+		margin-top :400px;
+	}
 }
 
 
@@ -18,3 +27,4 @@ body{
 .ng-invalid:not(form)  {
   border-left: 5px solid #a94442; /* red */
 }
+
