@@ -6,14 +6,14 @@ body{
 }
 .row { margin: 0; padding: 0 }
 
-@media screen and (max-width: 638px) {
+@media screen and (max-width: 750px) {
 	#loader {
 		margin-top :170px;
 	}
 }
 
 
-@media screen and (min-width: 639px) {
+@media screen and (min-width: 750px) {
 	#loader {
 		margin-top :400px;
 	}
