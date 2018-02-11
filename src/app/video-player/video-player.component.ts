@@ -1,5 +1,6 @@
-import {Component, OnInit, ViewChild,ElementRef,AfterContentInit, Renderer2} from '@angular/core';
+import {Component, OnInit, ViewChild,ElementRef,AfterContentInit, Renderer2, HostListener} from '@angular/core';
 import {VgAPI} from 'videogular2/core';
+import { VgControlsModule } from 'videogular2/controls';
 
 @Component({
   selector: 'app-video-player',
@@ -10,7 +11,9 @@ import {VgAPI} from 'videogular2/core';
 export class VideoPlayerComponent implements OnInit {
 	preload:string = 'auto';
     api:VgAPI;
+    control_api:VgControlsModule;
 	globalListenFunc: Function;
+	vgSlider: boolean;
 
 	constructor(private renderer: Renderer2) {}
 
@@ -27,6 +30,13 @@ export class VideoPlayerComponent implements OnInit {
 		this.api.fsAPI.toggleFullscreen();
 		console.log(this)
 	}
+
+	@HostListener('mouseover') onMouseEnter(control_api:VgControlsModule) {
+		return true
+	}
+
+	
+
 
 
 	onPlayerReady(api:VgAPI) {
