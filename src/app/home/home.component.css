@@ -1,0 +1,7 @@
+@media screen and (max-width: 767px) {
+	#home_video_player{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+
+}
