@@ -10,7 +10,6 @@ import { MatInputModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material';
 import { MatMenuModule } from '@angular/material';
 import { FormsModule }   from '@angular/forms';
-import { InlineSVGModule } from 'ng-inline-svg';
 
 
 import { AppComponent } from './app.component';
@@ -108,7 +107,6 @@ const appRoutes: Routes = [
     VgBufferingModule,
     VgStreamingModule,
     HttpClientModule,
-    InlineSVGModule.forRoot({ baseUrl: 'http:/www.miglig.com' }),
 
   ],
   providers: [HttpApiService],
