@@ -8,8 +8,8 @@ body{
 
 @media screen and (max-width: 750px) {
 	#loader {
-		margin-top :240px;
-		margin-left: 110px;
+		margin-top :190px;
+		margin-left: 90px;
 		text-align: center;
 	}
 }
