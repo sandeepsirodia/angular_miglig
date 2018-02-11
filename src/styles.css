@@ -9,6 +9,7 @@ body{
 @media screen and (max-width: 750px) {
 	#loader {
 		margin-top :170px;
+		text-align: center;
 	}
 }
 
@@ -16,6 +17,7 @@ body{
 @media screen and (min-width: 750px) {
 	#loader {
 		margin-top :400px;
+		text-align: center;
 	}
 }
 
