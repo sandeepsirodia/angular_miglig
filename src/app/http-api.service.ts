@@ -7,12 +7,10 @@ const httpOptions = {
 };
 @Injectable()
 export class HttpApiService {
-	apiRoot: string = "http://api.miglig.com/api/user/signup";
+	apiRoot: string = "http://api.miglig.com/api";
 	constructor(private http:HttpClient) { }
 	
-	signup_api(json_api) {
-		console.log(json_api)
-  //       return this.http.post(this.apiRoot, json_api).subscribe(res => console.log(res));
+	post_api(json_api: JSON, url_api : string) {
+        return this.http.post(this.apiRoot + url_api, json_api).subscribe((res : any)=> console.log(res) );
     }
-
 }

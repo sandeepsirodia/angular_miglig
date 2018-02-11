@@ -6,11 +6,9 @@ import {
   FormControl,
   NgForm
 } from '@angular/forms';
-import { Signup }    from '../signup';
 
 import {HttpApiService} from '../http-api.service';
 import {Injectable} from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
  
 
@@ -24,9 +22,8 @@ export class SignupComponent implements OnInit  {
 
   form: FormGroup;
   private formSubmitAttempt: boolean;
-  apiRoot: string = "http://api.miglig.com/api/user/register/";
 
-  constructor(private formBuilder: FormBuilder, private httpClient:HttpClient) { }
+  constructor(private formBuilder: FormBuilder, private  apis : HttpApiService) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -35,7 +32,7 @@ export class SignupComponent implements OnInit  {
       mobile: [null, [Validators.required]],
       password: [null, Validators.required],
       re_password: [null, Validators.required],
-    },{validator: this.checkIfMatchingPasswords('password', 're_password')});
+    },{Validators: this.checkIfMatchingPasswords('password', 're_password')});
   }
 
   checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
@@ -51,13 +48,12 @@ export class SignupComponent implements OnInit  {
       }
     }
 
-	onSubmit(f: NgForm, apis : HttpApiService) {
+	onSubmit(f: NgForm) {
 		this.formSubmitAttempt = true;
 		if (this.form.valid) {
 			let api_data = f.value
 			console.log(api_data)
-			// apis.signup_api(api_data)
-			this.httpClient.post( "http://api.miglig.com/api/user/register/", api_data).subscribe((res : any) => console.log(res));
+			this.apis.post_api(api_data, "/user/register/")
 			
 		} else {
 			this.validateAllFormFields(this.form); //{7}
