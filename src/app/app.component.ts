@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {HttpClient } from '@angular/common/http';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,12 @@ import {HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
 
-  constructor (private httpClient : HttpClient) {}
-  
+  svg:SafeHtml;
+
+  constructor(private sanitizer: DomSanitizer) { }
+
+  ngOnInit() {
+      this.svg = this.sanitizer.bypassSecurityTrustHtml("SVG CONTENT");
+
+  }  
 }
