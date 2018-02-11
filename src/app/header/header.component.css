@@ -16,6 +16,15 @@
     top: 0px;
     color: white;
   }
+
+  #link_home_header{
+    margin-top:10px;
+  }
+
+  #link_home_signup{
+    margin-bottom:10px;
+  }
+  
   .topnav.responsive a {
     float: none;
     display: block;
