@@ -1,10 +1,10 @@
-<vg-player (onPlayerReady)="onPlayerReady($event)"  (dblclick)="onDoubleClickFullscreen($event)" >
+<vg-player id="player_universal" (onPlayerReady)="onPlayerReady($event)"  (dblclick)="onDoubleClickFullscreen($event)" >
 	<vg-overlay-play ></vg-overlay-play>
 	<vg-buffering></vg-buffering>
 
-    <vg-scrub-bar>
+    <vg-scrub-bar [vgSlider]="true">
     	<vg-scrub-bar-cue-points></vg-scrub-bar-cue-points>
-		<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+		<vg-scrub-bar-current-time [vgSlider]="true"></vg-scrub-bar-current-time>
 		<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
 	</vg-scrub-bar>
 	<vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5" [style.background-color]="'rgba(0, 0, 0, 0.1)'">
@@ -27,7 +27,7 @@
 		<!-- <div [style.position]="'relative'" [style.width]="'85%'"  ></div> -->
 		<vg-playback-button></vg-playback-button>
 		
-		<vg-track-selector ></vg-track-selector>
+		<!-- <vg-track-selector ></vg-track-selector> -->
 		<vg-fullscreen [style.float]="'right'" ></vg-fullscreen>
 	</vg-controls>
 
