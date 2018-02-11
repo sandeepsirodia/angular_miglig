@@ -8,7 +8,8 @@ body{
 
 @media screen and (max-width: 750px) {
 	#loader {
-		margin-top :170px;
+		margin-top :240px;
+		margin-left: 110px;
 		text-align: center;
 	}
 }
@@ -17,6 +18,8 @@ body{
 @media screen and (min-width: 750px) {
 	#loader {
 		margin-top :400px;
+		position: absolute;
+		margin-left: 45%;
 		text-align: center;
 	}
 }
