@@ -12,7 +12,6 @@ const httpOptions = {
 export class HttpApiService {
 	
 	apiRoot: string = "http://api.miglig.com/api";
-
 	public values: any[];
 
 	public broadcast : boolean;
@@ -27,10 +26,9 @@ export class HttpApiService {
     	var currentUser = JSON.parse(localStorage.getItem('currentUser'));
 		console.log(currentUser.token)
 
-		var token = currentUser.token;
 
-        this.http.post(this.apiRoot + "/user/verify_customer/", token).subscribe((data) => { console.log(data);
-         // if(data.result){this.broadcast = true;}
+        this.http.post(this.apiRoot + "/user/verify_customer/",  {"token" : currentUser.token,}).subscribe((data) => { console.log(data);
+         if(data){this.broadcast = true;}
 		})			;
     }
 

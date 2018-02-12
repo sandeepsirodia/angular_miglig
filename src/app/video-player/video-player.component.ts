@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild,ElementRef,AfterContentInit, Renderer2, HostListener} from '@angular/core';
 import {VgAPI} from 'videogular2/core';
 import { VgControlsModule } from 'videogular2/controls';
+import {HttpApiService} from '../http-api.service';
 
 @Component({
   selector: 'app-video-player',
@@ -15,10 +16,11 @@ export class VideoPlayerComponent implements OnInit {
 	globalListenFunc: Function;
 	vgSlider: boolean;
 
-	constructor(private renderer: Renderer2) {}
+	constructor(private renderer: Renderer2, private  apis : HttpApiService
+		) {}
 
 	ngOnInit() {
-		
+		this.apis.verify()
 	}
 
 	ngOnDestroy() {
