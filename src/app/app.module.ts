@@ -35,6 +35,7 @@ import { VgOverlayPlayModule } from 'videogular2/overlay-play';
 import { VgBufferingModule } from "videogular2/buffering";
 import { VgStreamingModule } from "videogular2/streaming";
 import { AppFieldErrorDisplayComponent } from './app-field-error-display/app-field-error-display.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
    {
@@ -65,6 +66,9 @@ const appRoutes: Routes = [
       path: 'signup',
       component: SignupComponent
    },
+   {  
+      path: '**', 
+      component: PageNotFoundComponent },
 ];
 
 
@@ -87,7 +91,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    AppFieldErrorDisplayComponent
+    AppFieldErrorDisplayComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

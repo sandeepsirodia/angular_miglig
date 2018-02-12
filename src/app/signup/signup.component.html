@@ -2,43 +2,42 @@
 	<form class="form-horizontal offset-sm-6 col-sm-4" #f="ngForm" [formGroup]="form">
 		<h4>Sign up</h4>
 	  <div class="form-group" [ngClass]="displayFieldCss('name')">
-	    <div class="col-sm-12">
-	      <!-- <label for="name" class="control-label">Name</label> -->
+	    <div >
 	      <input type="text" id="name" ngModel  placeholder="Name" class="form-control" formControlName="name">
 	    </div>
 	  </div>
 
 	  <div class="form-group" [ngClass]="displayFieldCss('email')">
-	    <div class="col-sm-12">
-	      <!-- <label for="email" class="control-label">Email</label> -->
+	    <div >
 	      <input type="text" id="email" ngModel  placeholder="Email"  class="form-control" formControlName="email">
 	    </div>
 	  </div>
 
 	  <div class="form-group" [ngClass]="displayFieldCss('mobile')">
-	    <div class="col-sm-12">
-	      <!-- <label for="name" class="control-label">Mobile</label> -->
+	    <div >
 	      <input type="text" id="mobile" ngModel  placeholder="Mobile"  class="form-control" formControlName="mobile">
 	    </div>
 	  </div>
 
 	  <div class="form-group" [ngClass]="displayFieldCss('password')">
-	    <div class="col-sm-12">
-	      <!-- <label for="email" class="control-label">Password</label> -->
+	    <div >
 	      <input type="text" id="password" ngModel  type="password" placeholder="Password"  class="form-control" formControlName="password">
 	    </div>
 	  </div>
 
 	  <div class="form-group" [ngClass]="displayFieldCss('re_password')">
-	    <div class="col-sm-12">
-	      <!-- <label for="email" class="control-label">Re-Password</label> -->
+	    <div >
 	      <input type="text" id="re_password" ngModel  type="password" placeholder="Re Type Password"  class="form-control" formControlName="re_password">
 	    </div>
 	  </div>
 
 	<app-field-error-display 
 	  [displayError]="isFieldValid('name')" 
-	  errorMsg="Please inform your name">
+	  [displayError]="isFieldValid('email')" 
+	  [displayError]="isFieldValid('mobile')" 
+	  [displayError]="isFieldValid('password')" 
+	  [displayError]="isFieldValid('re_password')" 
+	  errorMsg="Please inform your detail">
 	</app-field-error-display>
 	  <button class="btn btn-primary" [disabled]="!form.valid" (click)="onSubmit(f)">Submit</button>
 	  <button class="btn" (click)="reset()">Reset</button>

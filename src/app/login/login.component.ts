@@ -10,6 +10,7 @@ import {
 import {HttpApiService} from '../http-api.service';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
+import {Location} from '@angular/common';
  
 
 @Component({
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
   private formSubmitAttempt: boolean;
   private data :any; 
 
-  constructor(private formBuilder: FormBuilder, private  apis : HttpApiService) { }
+  constructor(private formBuilder: FormBuilder, private  apis : HttpApiService, private location: Location) { }
 
 	ngOnInit() {
 		this.form = this.formBuilder.group({
@@ -37,7 +38,6 @@ export class LoginComponent implements OnInit {
 		var token = currentUser.token;
 		this.apis.post_api(currentUser.token, "/user/verify_customer/") 
 
-		
 	}
 
 	set_user(data){
@@ -48,6 +48,9 @@ export class LoginComponent implements OnInit {
 			mobile: data.data.mobile,
 			name: data.data.name,
 		}));
+		console.log("go")
+		window.location.href='/'
+
 	}
   
 

@@ -54,6 +54,7 @@ export class SignupComponent implements OnInit  {
 			let api_data = f.value
 			console.log(api_data)
 			this.apis.post_api(api_data, "/user/register/")
+			window.location.href='/login'
 			
 		} else {
 			this.validateAllFormFields(this.form); //{7}

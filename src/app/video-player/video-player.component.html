@@ -1,33 +1,23 @@
  <vg-player id="player_universal" (onPlayerReady)="onPlayerReady($event)"  (dblclick)="onDoubleClickFullscreen($event)" >
-	<vg-overlay-play ></vg-overlay-play>
+	<vg-overlay-play  [style.z-index]="'1'" ></vg-overlay-play>
 	<vg-buffering></vg-buffering>
 
-    <vg-scrub-bar [vgSlider]="true">
+    <vg-scrub-bar [vgSlider]="true" [style.z-index]="'2'">
+    	
     	<vg-scrub-bar-cue-points></vg-scrub-bar-cue-points>
 		<vg-scrub-bar-current-time [vgSlider]="true"></vg-scrub-bar-current-time>
 		<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
 	</vg-scrub-bar>
 	<vg-controls [vgAutohide]="true" [vgAutohideTime]="1.5" [style.background-color]="'rgba(0, 0, 0, 0.1)'">
 		      	
-       
-
 		<vg-play-pause></vg-play-pause>
 		<vg-mute ></vg-mute>
 		<vg-volume ></vg-volume>
 
 		<vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
-
-
-		<vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
-
-        <!-- <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display> -->
+		<div style="pointer-events: none; width: 100%;"></div>
         <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
-
-		<!-- <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display> -->
-		<!-- <div [style.position]="'relative'" [style.width]="'85%'"  ></div> -->
 		<vg-playback-button></vg-playback-button>
-		
-		<!-- <vg-track-selector ></vg-track-selector> -->
 		<vg-fullscreen [style.float]="'right'" ></vg-fullscreen>
 	</vg-controls>
 

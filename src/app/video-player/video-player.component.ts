@@ -41,9 +41,6 @@ export class VideoPlayerComponent implements OnInit {
 
 	onPlayerReady(api:VgAPI) {
 	    this.api = api;
-	    console.log(this)
-	    console.log(this.api.$$seek(api.getDefaultMedia(), .5, false))
-	    // this.api.seek()
 
 		this.globalListenFunc = this.renderer.listen('document', 'keydown', e => {
 			if (e.key == ' ' && e.code == 'Space' && api.getDefaultMedia().state == "paused") {
