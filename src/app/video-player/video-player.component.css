@@ -9,7 +9,7 @@
 
 #player_universal vg-controls vg-mute{
 	margin-top: 14px;
-	margin-left: 15px;
+	/*margin-left: 15px;*/
 	margin-bottom: 19px;
 	width: 17px;
     height: 20px;
@@ -77,12 +77,46 @@ vg-scrub-bar{
 	background: rgba(90, 89, 89, 0.75);
 }
 
-:host ::ng-deep vg-overlay-play .vg-overlay-play {
-	height: 80%;
-	cursor: default;
-	
+@media screen and (min-width: 726px) {
+	:host ::ng-deep vg-overlay-play .vg-overlay-play {
+		height: 80%;
+		cursor: default;
+		
+	}
+
+	:host ::ng-deep vg-overlay-play .vg-overlay-play .overlay-play-container.vg-icon-play_arrow{
+		height: 125%;
+	}
+	#player_universal vg-controls vg-mute{
+		margin-left: 15px;
+		
+	}
+
+
 }
 
-:host ::ng-deep vg-overlay-play .vg-overlay-play .overlay-play-container.vg-icon-play_arrow{
-	height: 125%;
+
+@media screen and (max-width: 725px) {\
+
+	vg-mute{
+
+		margin-left: 0px !important;
+
+	}
+
+	vg-volume{
+		width: 100%;
+		margin-left: -5px !important;
+	}
+
+	:host ::ng-deep vg-overlay-play .vg-overlay-play {
+		height: 60%;
+		cursor: default;
+		
+	}
+
+	:host ::ng-deep vg-overlay-play .vg-overlay-play .overlay-play-container.vg-icon-play_arrow{
+		height: 166%;
+	}
+
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, Directive } from '@angular/core';
+import {HttpApiService} from '../http-api.service';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +9,18 @@ import { Component, OnInit, Directive } from '@angular/core';
 
 
 export class HeaderComponent implements OnInit {
+	broadcast : boolean;
 
-	constructor() { }
+	constructor(private  apis : HttpApiService) { }
 
 	ngOnInit() {
+		this.broadcast_allot(this.apis.verify())
 	}
+
+	broadcast_allot(broadcast) {
+		this.broadcast = broadcast
+	}
+
 	myFunction(event) {
 	    var x = document.getElementById("Topnav");
 	    if (x.className === "topnav row") {
@@ -21,6 +29,7 @@ export class HeaderComponent implements OnInit {
 	        x.className = "topnav row";
 	    }
 	}
+
 	headerFunction() {
 
 	}

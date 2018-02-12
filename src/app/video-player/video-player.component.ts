@@ -15,13 +15,15 @@ export class VideoPlayerComponent implements OnInit {
     control_api:VgControlsModule;
 	globalListenFunc: Function;
 	vgSlider: boolean;
+	broadcast : boolean;
 
 	constructor(private renderer: Renderer2, private  apis : HttpApiService
 		) {}
 
 	ngOnInit() {
-		this.apis.verify()
 	}
+
+	
 
 	ngOnDestroy() {
 		// remove listener

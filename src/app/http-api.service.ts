@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
  
 const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'Content-Type' : 'application/json' })
 };
 
 @Injectable()
@@ -27,9 +27,14 @@ export class HttpApiService {
 		console.log(currentUser.token)
 
 
-        this.http.post(this.apiRoot + "/user/verify_customer/",  {"token" : currentUser.token,}).subscribe((data) => { console.log(data);
-         if(data){this.broadcast = true;}
-		})			;
+        return this.http.post(this.apiRoot + "/user/verify_customer/",  {"token" : currentUser.token,}).subscribe((data : any) => { 
+			if(data.result){
+				return true;
+			}else{
+				return false;
+			}
+			
+		})			
     }
 
 }
