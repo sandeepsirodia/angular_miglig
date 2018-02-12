@@ -26,6 +26,9 @@ export class SignupComponent implements OnInit  {
   constructor(private formBuilder: FormBuilder, private  apis : HttpApiService) { }
 
   ngOnInit() {
+  	if (this.apis.verify()) {
+		window.location.href='/'
+	}
     this.form = this.formBuilder.group({
       name: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],

@@ -21,19 +21,23 @@ import {Location} from '@angular/common';
 export class LoginComponent implements OnInit {
 
   
-  form: FormGroup;
-  private formSubmitAttempt: boolean;
-  private data :any; 
+	form: FormGroup;
+	private formSubmitAttempt: boolean;
+	private data :any; 
+	public broadcast : boolean;
 
-  constructor(private formBuilder: FormBuilder, private  apis : HttpApiService, private location: Location) { }
+	constructor(private formBuilder: FormBuilder, private  apis : HttpApiService, private location: Location) { }
 
 	ngOnInit() {
+		if (this.apis.verify()) {
+			window.location.href='/'
+		}
+
 		this.form = this.formBuilder.group({
 			email_mobile: [null, Validators.required],
 			password: [null, [Validators.required]],
 		});
 		var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-		console.log(currentUser.token)
 
 		var token = currentUser.token;
 		this.apis.post_api(currentUser.token, "/user/verify_customer/") 

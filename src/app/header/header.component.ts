@@ -21,6 +21,11 @@ export class HeaderComponent implements OnInit {
 		this.broadcast = broadcast
 	}
 
+	LogoutFunction(event){
+
+	}
+
+
 	myFunction(event) {
 	    var x = document.getElementById("Topnav");
 	    if (x.className === "topnav row") {
@@ -31,7 +36,11 @@ export class HeaderComponent implements OnInit {
 	}
 
 	headerFunction() {
+		var currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
+		var token = currentUser.token;
+		this.apis.post_api(currentUser.token, "/user/logout/").subscribe((data) => { window.location.href='/'
+ })
 	}
 	toggleFunction(event) {
 		var x = document.getElementById("Topnav");

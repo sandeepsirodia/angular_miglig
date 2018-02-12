@@ -37,14 +37,17 @@ import { VgStreamingModule } from "videogular2/streaming";
 import { AppFieldErrorDisplayComponent } from './app-field-error-display/app-field-error-display.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+
+
+
 const appRoutes: Routes = [
    {
       path: '',
-      component: HomeComponent
+      component: HomeComponent,
    },
    {
       path: 'login',
-      component: LoginComponent
+      component: LoginComponent,
    },
    {
       path: 'regions',

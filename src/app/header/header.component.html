@@ -4,14 +4,18 @@
 			<a style="padding-left:0px !important; " id="miglig_logo_link" routerLink="/" (click)="toggleFunction($event)"><img id='miglig_logo' src="assets/logo.png"></a>
 		</div>
 		<div id="top_bar" class="col-xs-6 col-sm-9  col-md-9 offset-md-1 col-lg-6 offset-lg-2">
-			<a></a>
-			<a routerLink="/" id="link_home_header" (click)="toggleFunction($event)">Home</a>
-			<a routerLink="regions" (click)="toggleFunction($event)">Regions</a>
-			<a routerLink="profile" (click)="toggleFunction($event)" *ngIf="broadcast" >Profile</a>
-			<a routerLink="aboutus" (click)="toggleFunction($event)">About Us</a>
-			<a routerLink="login" (click)="toggleFunction($event)" *ngIf="!broadcast" >Login</a>
-			<a routerLink="signup"  id="link_home_signup" (click)="toggleFunction($event)" *ngIf="!broadcast" >Sign up</a>
-			<a href="javascript:void(0);" style="font-size:15px; float: right !important; padding-right:0px;" class="icon" (click)="myFunction($event)">&#9776;</a>
+			<div style="float: right; padding-right: 90px;">
+				<a></a>
+				<a routerLink="/" id="link_home_header" (click)="toggleFunction($event)">Home</a>
+				<a routerLink="regions" (click)="toggleFunction($event)">Regions</a>
+				<a routerLink="profile" (click)="toggleFunction($event)" *ngIf="broadcast" >Profile</a>
+				<a routerLink="aboutus" (click)="toggleFunction($event)">About Us</a>
+				<a routerLink="login" (click)="toggleFunction($event)" *ngIf="!broadcast" >Login</a>
+				<a routerLink="signup"  id="link_home_signup" (click)="toggleFunction($event)" *ngIf="!broadcast" >Sign up</a>
+				<a routerLink="profile" (click)="LogoutFunction($event)" *ngIf="broadcast" >Logout</a>
+
+				<a href="javascript:void(0);" style="font-size:15px; float: right !important; padding-right:0px;" class="icon" (click)="myFunction($event)">&#9776;</a>
+			</div>
 		</div>
    </div>
 </div>
