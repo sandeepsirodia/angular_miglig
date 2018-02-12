@@ -22,7 +22,14 @@ export class HeaderComponent implements OnInit {
 	}
 
 	LogoutFunction(event){
+		var currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
+		var token = currentUser.token;
+			
+		this.apis.post_api({"token" : token}, "/user/logout/").subscribe((data) => { 
+			localStorage.removeItem('currentUser');
+			window.location.href='/'
+		})
 	}
 
 
@@ -35,13 +42,6 @@ export class HeaderComponent implements OnInit {
 	    }
 	}
 
-	headerFunction() {
-		var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
-		var token = currentUser.token;
-		this.apis.post_api(currentUser.token, "/user/logout/").subscribe((data) => { window.location.href='/'
- })
-	}
 	toggleFunction(event) {
 		var x = document.getElementById("Topnav");
 		if (x.className === "topnav row responsive") {

@@ -91,4 +91,8 @@ export class SignupComponent implements OnInit  {
 	  this.form.reset();
 	  this.formSubmitAttempt = false;
 	}
+
+	login_relocate() {
+		window.location.href='/login'
+	}
 }

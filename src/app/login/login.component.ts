@@ -37,12 +37,9 @@ export class LoginComponent implements OnInit {
 			email_mobile: [null, Validators.required],
 			password: [null, [Validators.required]],
 		});
-		var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
-		var token = currentUser.token;
-		this.apis.post_api(currentUser.token, "/user/verify_customer/") 
-
 	}
+
+
 
 	set_user(data){
 		console.log(data)
@@ -96,6 +93,10 @@ export class LoginComponent implements OnInit {
 	reset() {
 		this.form.reset();
 		this.formSubmitAttempt = false;
+	}
+
+	signup_relocate() {
+		window.location.href='/signup'
 	}
 
 }

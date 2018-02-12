@@ -18,23 +18,24 @@ export class HttpApiService {
 
 	constructor(private http : HttpClient) { }
 
-	post_api(json_api: JSON, url_api : string) {
+	post_api(json_api: any, url_api : string) {
         return this.http.post(this.apiRoot + url_api, json_api);
     }
 
     verify() {
     	var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-		console.log(currentUser.token)
-
-
-        return this.http.post(this.apiRoot + "/user/verify_customer/",  {"token" : currentUser.token,}).subscribe((data : any) => { 
-			if(data.result){
-				return true;
-			}else{
-				return false;
-			}
-			
-		})			
+    	if (currentUser) {
+	        return this.http.post(this.apiRoot + "/user/verify_customer/",  {"token" : currentUser.token,}).subscribe((data : any) => { 
+				if(data.result){
+					return true;
+				}else{
+					return false;
+				}
+				
+			})	
+		}else{
+			return false;
+		}		
     }
 
 }

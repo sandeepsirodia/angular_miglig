@@ -5,7 +5,7 @@
   .topnav a.icon {
     float: right;
     display: block;
-    color: white;
+    color: white !important;
   }
   .topnav.responsive { 
     position: relative;
@@ -38,7 +38,19 @@
     padding-top: 20px;
     padding-left: 15px !important;
   }
+  #top_float{
+    float: none !important; 
+    padding-right: 0px !important;
+  }
+  #top_float a{
+    padding-left: 0px !important;
+  }
 
+}
+
+#top_float{
+  float: right; 
+  padding-right: 90px;
 }
 
 .topnav {
