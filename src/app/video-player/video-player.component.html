@@ -27,9 +27,11 @@
 		<vg-volume ></vg-volume>
 
 		<vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+		<span style="color: white; margin-top: 7px; margin-left: 3px; margin-right: 3px; font-size: 20px;"><b>/</b></span>
+		<vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
 		<div style="pointer-events: none; width: 100%;"></div>
-        <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
-		<vg-playback-button></vg-playback-button>
+        
+		<!-- <vg-playback-button></vg-playback-button> -->
 		<vg-fullscreen [style.float]="'right'" ></vg-fullscreen>
 	</vg-controls>
 
