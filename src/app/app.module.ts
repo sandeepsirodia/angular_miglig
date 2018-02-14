@@ -36,8 +36,11 @@ import { VgBufferingModule } from "videogular2/buffering";
 import { VgStreamingModule } from "videogular2/streaming";
 import { AppFieldErrorDisplayComponent } from './app-field-error-display/app-field-error-display.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AlbumComponent } from './album/album.component';
+import { VideoComponent } from './video/video.component';
 
-
+import { NgxCarouselModule } from 'ngx-carousel';
+import 'hammerjs';
 
 
 const appRoutes: Routes = [
@@ -62,12 +65,16 @@ const appRoutes: Routes = [
       component: AboutusComponent
    },
    {
-      path: 'video',
-      component: VideoPlayerComponent
-   },
-   {
       path: 'signup',
       component: SignupComponent
+   },
+   {
+      path: 'album',
+      component: AlbumComponent
+   },
+   {
+      path: 'video/:id',
+      component: VideoComponent,
    },
    {  
       path: '**', 
@@ -95,7 +102,9 @@ const appRoutes: Routes = [
     FooterComponent,
     HomeComponent,
     AppFieldErrorDisplayComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AlbumComponent,
+    VideoComponent
   ],
   imports: [
     BrowserModule,
@@ -115,6 +124,7 @@ const appRoutes: Routes = [
     VgBufferingModule,
     VgStreamingModule,
     HttpClientModule,
+    NgxCarouselModule,
 
   ],
   providers: [HttpApiService],

@@ -1,5 +1,60 @@
-<div class="row" [style.margin-top]="'40px'">
-	<div id="home_video_player" class="offset-lg-2 offset-md-2 offset-sm-1 col-lg-8 col-md-8 col-sm-10 col-xs-12">
-		<app-video-player></app-video-player>
+<div class="row">
+
+	<div style="margin-top: 2%;" class="col-sm-10 offset-sm-1 col-xs-12">
+	<h3><label> Trending Videos</label></h3>
+	<ngx-carousel
+	  [inputs]="carouselTile"
+	  (carouselLoad)="carouselTileLoad($event)">
+
+	        <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselTileItems">
+	            <h1>{{Tile + 1}}</h1>
+	        </ngx-tile>
+
+	      <button NgxCarouselPrev class='leftRs'>&lt;</button>
+	      <button NgxCarouselNext class='rightRs'>&gt;</button>
+	</ngx-carousel>
 	</div>
+	<div style="margin-top: 2%;" class="col-sm-10 offset-sm-1 col-xs-12">
+	<h3><label> New Videos</label></h3>
+	<ngx-carousel
+	  [inputs]="carouselTile"
+	  (carouselLoad)="carouselTileLoad($event)">
+
+	        <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselTileItems">
+	            <h1>{{Tile + 1}}</h1>
+	        </ngx-tile>
+
+	      <button NgxCarouselPrev class='leftRs'>&lt;</button>
+	      <button NgxCarouselNext class='rightRs'>&gt;</button>
+	</ngx-carousel>
+	</div>
+	<div style="margin-top: 2%;" class="col-sm-10 offset-sm-1 col-xs-12">
+	<h3><label> Popular Videos</label></h3>
+	<ngx-carousel
+	  [inputs]="carouselTile"
+	  (carouselLoad)="carouselTileLoad($event)">
+
+	        <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselTileItems">
+	            <h1>{{Tile + 1}}</h1>
+	        </ngx-tile>
+
+	      <button NgxCarouselPrev class='leftRs'>&lt;</button>
+	      <button NgxCarouselNext class='rightRs'>&gt;</button>
+	</ngx-carousel>
+	</div>
+	<div style="margin-top: 2%;" class="col-sm-10 offset-sm-1 col-xs-12">
+	<h3><label> All time hits</label></h3>
+	<ngx-carousel
+	  [inputs]="carouselTile"
+	  (carouselLoad)="carouselTileLoad($event)">
+
+	        <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselTileItems">
+	            <h1>{{Tile + 1}}</h1>
+	        </ngx-tile>
+
+	      <button NgxCarouselPrev class='leftRs'>&lt;</button>
+	      <button NgxCarouselNext class='rightRs'>&gt;</button>
+	</ngx-carousel>
+	</div>
+
 </div>
