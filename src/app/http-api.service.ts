@@ -22,7 +22,7 @@ export class HttpApiService {
         return this.http.post(this.apiRoot + url_api, json_api);
     }
 
-    verify() {
+    public verify() {
     	var currentUser = JSON.parse(localStorage.getItem('currentUser'));
     	if (currentUser) {
 	        return this.http.post(this.apiRoot + "/user/verify_customer/",  {"token" : currentUser.token,}).subscribe((data : any) => { 

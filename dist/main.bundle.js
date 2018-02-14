@@ -649,6 +649,9 @@ var HomeComponent = /** @class */ (function () {
         this.apis = apis;
     }
     HomeComponent.prototype.ngOnInit = function () {
+        if (!JSON.parse(localStorage.getItem('currentUser'))) {
+            window.location.href = '/login';
+        }
         if (!this.apis.verify()) {
             window.location.href = '/login';
         }
@@ -1249,8 +1252,8 @@ var SignupComponent = /** @class */ (function () {
         if (this.form.valid) {
             var api_data = f.value;
             console.log(api_data);
-            this.apis.post_api(api_data, "/user/register/");
-            window.location.href = '/login';
+            this.apis.post_api(api_data, "/user/register/").subscribe(function (data) { window.location.href = '/login'; });
+            // window.location.href='/login'
         }
         else {
             this.validateAllFormFields(this.form); //{7}
