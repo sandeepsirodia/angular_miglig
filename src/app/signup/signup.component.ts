@@ -10,6 +10,7 @@ import {
 import {HttpApiService} from '../http-api.service';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
+import { Router} from '@angular/router';
  
 
 
@@ -23,7 +24,7 @@ export class SignupComponent implements OnInit  {
   form: FormGroup;
   private formSubmitAttempt: boolean;
 
-  constructor(private formBuilder: FormBuilder, private  apis : HttpApiService) { }
+  constructor(private formBuilder: FormBuilder, private  apis : HttpApiService , private router: Router) { }
 
   ngOnInit() {
   	if (this.apis.verify()) {
@@ -56,8 +57,7 @@ export class SignupComponent implements OnInit  {
 		if (this.form.valid) {
 			let api_data = f.value
 			console.log(api_data)
-			this.apis.post_api(api_data, "/user/register/").subscribe((data) => { window.location.href='/login' })
-			// window.location.href='/login'
+			this.apis.post_api(api_data, "/user/register/").subscribe((data) => { this.router.navigate(['login']); })
 			
 		} else {
 			this.validateAllFormFields(this.form); //{7}
@@ -93,6 +93,6 @@ export class SignupComponent implements OnInit  {
 	}
 
 	login_relocate() {
-		window.location.href='/login'
+		this.router.navigate(['login']);
 	}
 }

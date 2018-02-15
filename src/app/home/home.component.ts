@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpApiService} from '../http-api.service';
 import { NgxCarousel } from 'ngx-carousel';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -18,15 +19,15 @@ export class HomeComponent implements OnInit {
     'assets/logo.png',
 
   ];
-  constructor(private  apis : HttpApiService ) {}
+  constructor(private  apis : HttpApiService , private router: Router) {}
 
   ngOnInit() {
   	if (!JSON.parse(localStorage.getItem('currentUser'))){
-  		window.location.href='/login'
+      this.router.navigate(['login']);
   	}
 
   	if (!this.apis.verify()) {
-			window.location.href='/login'
+      this.router.navigate(['login']);
 		}
 
     this.carouselTileItems = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
@@ -58,7 +59,7 @@ export class HomeComponent implements OnInit {
   }
 
   public tile_video() {
-    window.location.href='/video/1'
+    this.router.navigate(['login']);
   }
   
 
