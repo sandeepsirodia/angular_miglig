@@ -226,7 +226,7 @@ var AppFieldErrorDisplayComponent = /** @class */ (function () {
  * @suppress {suspiciousCode,uselessCode,missingProperties,missingOverride,checkTypes}
  * tslint:disable
  */ 
-var styles = ["*[_ngcontent-%COMP%]:focus {\n    outline: none;\n}"];
+var styles = [""];
 
 
 
