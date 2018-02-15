@@ -120,3 +120,6 @@ vg-scrub-bar{
 	}
 
 }
+*:focus {
+    outline: none;
+}

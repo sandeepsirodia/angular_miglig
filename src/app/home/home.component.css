@@ -47,3 +47,6 @@ ngx-carousel{
 	margin-left: -10px;
 	margin-right: -10px;
 }
+*:focus {
+    outline: none;
+}
