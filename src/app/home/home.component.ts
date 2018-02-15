@@ -56,6 +56,10 @@ export class HomeComponent implements OnInit {
     }
  
   }
+
+  public tile_video() {
+    window.location.href='/video/1'
+  }
   
 
 }
