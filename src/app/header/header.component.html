@@ -1,11 +1,11 @@
 <div #header >
    <div class="topnav row" id="Topnav">
-   		<div class="col-xs-6 col-sm-3 col-md-1 offset-md-1 offset-lg-1 col-lg-3" style="z-index:2;">
+   		<div class="col-6 col-sm-3 col-md-1 offset-md-1 offset-lg-1 col-lg-3" >
 			<a style="padding-left:0px !important; " id="miglig_logo_link" routerLink="/" (click)="toggleFunction($event)"><img id='miglig_logo' src="assets/logo.png"></a>
 		</div>
-		<div id="top_bar" class="col-xs-6 col-sm-9  col-md-9 offset-md-1 col-lg-6 offset-lg-2">
-			<div id="top_float">
-				<a></a>
+		<div  class="col-6 col-sm-8  col-md-58 offset-md-1 col-lg-5 offset-lg-2">
+			<div >
+				<a href="javascript:void(0);" style="font-size:15px; float: right !important; padding-right:0px;" class="icon" (click)="myFunction($event)">&#9776;</a>
 				<a routerLink="/" id="link_home_header" (click)="toggleFunction($event)">Home</a>
 				<a routerLink="album" (click)="toggleFunction($event)">Albums</a>
 				<a routerLink="profile" (click)="toggleFunction($event)" *ngIf="broadcast" >Profile</a>
@@ -14,7 +14,6 @@
 				<a routerLink="signup"  id="link_home_signup" (click)="toggleFunction($event)" *ngIf="!broadcast" >Sign up</a>
 				<a routerLink="profile" (click)="LogoutFunction($event)" *ngIf="broadcast" >Logout</a>
 
-				<a href="javascript:void(0);" style="font-size:15px; float: right !important; padding-right:0px;" class="icon" (click)="myFunction($event)">&#9776;</a>
 			</div>
 		</div>
    </div>

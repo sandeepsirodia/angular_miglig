@@ -18,7 +18,8 @@
   }
 
   #link_home_header{
-    margin-top:10px;
+    margin-top:45px;
+
   }
 
   #link_home_signup{
@@ -34,16 +35,21 @@
     margin-top: -37px;
   }
   #miglig_logo_link {
+    float: left !important;
     padding: 0px;
     padding-top: 20px;
     padding-left: 15px !important;
   }
   #top_float{
-    float: none !important; 
+    /*float: none !important; */
     padding-right: 0px !important;
   }
   #top_float a{
-    padding-left: 0px !important;
+    padding-left: 15px !important;
+  }
+
+  #Topnav div div a{
+    float: right;
   }
 
 }
@@ -99,4 +105,9 @@
 
 #top_bar{
   float: right;
+}
+
+#Topnav div div {
+  float: right;
+  padding-right: 0px;
 }

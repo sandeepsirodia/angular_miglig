@@ -42,3 +42,8 @@ h1{
 :host ::ng-deep ngx-tile div{
 	cursor: pointer;
 }
+
+ngx-carousel{
+	margin-left: -10px;
+	margin-right: -10px;
+}
