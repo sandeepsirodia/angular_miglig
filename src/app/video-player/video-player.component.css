@@ -75,6 +75,15 @@
 }
 vg-scrub-bar{
 	background: rgba(90, 89, 89, 0.75);
+    width: 97%;
+    margin-left: 1.5%;
+}
+
+@media screen and (max-width: 725px) {
+	vg-scrub-bar{
+	    width: 94% !important;
+	    margin-left: 3% !important;
+	}
 }
 
 @media screen and (min-width: 726px) {

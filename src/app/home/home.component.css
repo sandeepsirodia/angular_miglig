@@ -50,3 +50,8 @@ ngx-carousel{
 *:focus {
     outline: none;
 }
+
+:host ::ng-deep .ngxcarouselPointDefault{
+    display: none;
+}
+
