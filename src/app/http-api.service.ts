@@ -11,7 +11,7 @@ const httpOptions = {
 
 export class HttpApiService {
 	
-	apiRoot: string = "http://api.miglig.com/api";
+	apiRoot: string = "https://api.miglig.com/api";
 	public values: any[];
 
 	public broadcast : boolean;
