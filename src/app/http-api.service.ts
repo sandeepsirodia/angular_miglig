@@ -22,6 +22,10 @@ export class HttpApiService {
         return this.http.post(this.apiRoot + url_api, json_api);
     }
 
+	get_api(url_api : string) {
+        return this.http.get(this.apiRoot + url_api);
+    }
+
     public verify() {
     	var currentUser = JSON.parse(localStorage.getItem('currentUser'));
     	if (currentUser) {

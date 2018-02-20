@@ -22,13 +22,13 @@ export class HomeComponent implements OnInit {
   constructor(private  apis : HttpApiService , private router: Router) {}
 
   ngOnInit() {
-  	if (!JSON.parse(localStorage.getItem('currentUser'))){
-      this.router.navigate(['login']);
-  	}
+  // 	if (!JSON.parse(localStorage.getItem('currentUser'))){
+  //     this.router.navigate(['login']);
+  // 	}
 
-  	if (!this.apis.verify()) {
-      this.router.navigate(['login']);
-		}
+  // 	if (!this.apis.verify()) {
+  //     this.router.navigate(['login']);
+		// }
 
     this.carouselTileItems = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
  
@@ -58,9 +58,9 @@ export class HomeComponent implements OnInit {
  
   }
 
-  public tile_video() {
-    this.router.navigate(['login']);
-  }
+  // public tile_video() {
+  //   this.router.navigate(['login']);
+  // }
   
 
 }
