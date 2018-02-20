@@ -14,12 +14,12 @@ export class HeaderComponent implements OnInit {
 	constructor(private  apis : HttpApiService) { }
 
 	ngOnInit() {
-		// this.broadcast_allot(this.apis.verify())
+		this.broadcast_allot(this.apis.verify())
 	}
 
-	// broadcast_allot(broadcast) {
-	// 	this.broadcast = broadcast
-	// }
+	broadcast_allot(broadcast) {
+		this.broadcast = broadcast
+	}
 
 	LogoutFunction(event){
 		var currentUser = JSON.parse(localStorage.getItem('currentUser'));
