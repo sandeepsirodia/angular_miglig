@@ -24,6 +24,7 @@
     "@angular/platform-browser": "^5.1.0",
     "@angular/platform-browser-dynamic": "^5.1.0",
     "@angular/router": "^5.1.0",
+    "angular-star-rating": "^3.0.8",
     "angular2-draggable": "^1.2.1",
     "bcrypt": "^1.0.3",
     "bootstrap": "4.0.0-beta.2",

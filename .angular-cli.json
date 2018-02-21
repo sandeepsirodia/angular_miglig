@@ -21,7 +21,8 @@
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "../node_modules/videogular2/fonts/videogular.css",
-        "styles.css"
+        "styles.css",
+        "styles.scss"
 
       ],
       "scripts": [],
@@ -57,7 +58,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
     "component": {}
   }
 }

@@ -38,6 +38,7 @@ import { AppFieldErrorDisplayComponent } from './app-field-error-display/app-fie
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AlbumComponent } from './album/album.component';
 import { VideoComponent } from './video/video.component';
+import { StarRatingModule } from 'angular-star-rating';
 
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
@@ -125,6 +126,7 @@ const appRoutes: Routes = [
     VgStreamingModule,
     HttpClientModule,
     NgxCarouselModule,
+    StarRatingModule.forRoot(),
 
   ],
   providers: [HttpApiService],
