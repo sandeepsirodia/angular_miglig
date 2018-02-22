@@ -132,7 +132,29 @@ vg-scrub-bar{
 	:host ::ng-deep vg-overlay-play .vg-overlay-play .overlay-play-container.vg-icon-play_arrow{
 		height: 166%;
 	}
-
+	vg-scrub-bar{
+		height: 15px;
+		background: none; 
+	    padding-top: 10px;
+    	/*margin-top: -5px;*/
+		/*height: 20px;*/
+	}
+	:host ::ng-deep vg-scrub-bar div{
+		background: rgba(90, 89, 89, 0.75);
+		z-index: -1;
+		height: 5px;
+	}
+	/*vg-scrub-bar-cue-points{
+		background: rgba(0, 0, 0, 0.75);
+	}
+	
+	vg-scrub-bar-buffering-time{
+		background: rgba(0, 0, 0, 0.75);
+	}*/
+	:host ::ng-deep vg-scrub-bar-current-time .background{
+	    background-color: white !important;
+	    z-index: 1;
+	}
 }
 *:focus {
     outline: none;

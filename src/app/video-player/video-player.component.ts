@@ -26,13 +26,11 @@ export class VideoPlayerComponent implements OnInit {
 	
 
 	ngOnDestroy() {
-		// remove listener
 		this.globalListenFunc();
 	}
 
 	onDoubleClickFullscreen(event: MouseEvent): void {
 		this.api.fsAPI.toggleFullscreen();
-		console.log(this)
 	}
 
 	@HostListener('mouseover') onMouseEnter(control_api:VgControlsModule) {
@@ -50,7 +48,7 @@ export class VideoPlayerComponent implements OnInit {
 			if (e.key == ' ' && e.code == 'Space' && api.getDefaultMedia().state == "paused") {
 				this.api.play();
 			}else if (e.key == ' ' && e.code == 'Space' && api.getDefaultMedia().state != "paused"){
-				this.api.pause()
+				this.api.pause();
 			}
 
 			if (e.altKey && e.code == 'ArrowRight') {
