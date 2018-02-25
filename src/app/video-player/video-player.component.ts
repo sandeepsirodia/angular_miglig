@@ -16,9 +16,10 @@ export class VideoPlayerComponent implements OnInit {
 	globalListenFunc: Function;
 	vgSlider: boolean;
 	broadcast : boolean;
-
-	constructor(private renderer: Renderer2, private  apis : HttpApiService
-		) {}
+	mobWidth: number;
+	constructor(private renderer: Renderer2, private  apis : HttpApiService	) {
+		this.mobWidth = (window.screen.width) 
+	}
 
 	ngOnInit() {
 	}
@@ -38,11 +39,23 @@ export class VideoPlayerComponent implements OnInit {
 	}
 
 	
+	mobile_screen_function(event){
+		// console.log(this.api.getDefaultMedia().state)
+		if(this.mobWidth <= 724){
+			if (this.api.getDefaultMedia().state == "paused") {
+				this.api.pause();
+			}
+			if (this.api.getDefaultMedia().state == "playing"){
+				this.api.play();
+			}
+		}
 
+	}
 
 
 	onPlayerReady(api:VgAPI) {
 	    this.api = api;
+    
 
 		this.globalListenFunc = this.renderer.listen('document', 'keydown', e => {
 			if (e.key == ' ' && e.code == 'Space' && api.getDefaultMedia().state == "paused") {
@@ -95,6 +108,7 @@ export class VideoPlayerComponent implements OnInit {
 				}
 				
 			}
+			
 		});
 	    
 	    this.api.getDefaultMedia().subscriptions.ended.subscribe(

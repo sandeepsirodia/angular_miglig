@@ -14,7 +14,7 @@
 	<vg-overlay-play  [style.z-index]="'1'" ></vg-overlay-play>
 	<vg-buffering></vg-buffering>
 
-    <vg-scrub-bar [vgSlider]="true" [style.z-index]="'2'">
+    <vg-scrub-bar (click)="mobile_screen_function($event)" [vgSlider]="true" [style.z-index]="'2'">
     	
     	<vg-scrub-bar-cue-points></vg-scrub-bar-cue-points>
 		<vg-scrub-bar-current-time [vgSlider]="true"></vg-scrub-bar-current-time>
