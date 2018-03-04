@@ -77,7 +77,7 @@ export class VideoPlayerComponent implements OnInit {
 
 	onPlayerReady(api:VgAPI) {
 	    this.api = api;
-
+	    this.api.play()
 	    this.api.getDefaultMedia().subscriptions.ended.subscribe(
 	        () => {
 	            this.api.getDefaultMedia().currentTime = 0;
