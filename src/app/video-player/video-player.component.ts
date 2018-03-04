@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild,ElementRef,AfterContentInit, Renderer2, Hos
 import {VgAPI} from 'videogular2/core';
 import { VgControlsModule } from 'videogular2/controls';
 import {HttpApiService} from '../http-api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-video-player',
@@ -17,11 +18,19 @@ export class VideoPlayerComponent implements OnInit {
 	vgSlider: boolean;
 	broadcast : boolean;
 	mobWidth: number;
-	constructor(private renderer: Renderer2, private  apis : HttpApiService	) {
+	public video: any;
+	sources : Array<Object>;
+
+	constructor(private renderer: Renderer2, private  apis : HttpApiService, private route: ActivatedRoute	) {
 		this.mobWidth = (window.screen.width) 
 	}
 
 	ngOnInit() {
+		this.route.params.subscribe(params => {
+	       this.apis.post_api( {"pk" : +params['id'],} , "/content/main_video/").subscribe((data: any) => {  
+				this.video = data.data[0];
+			})
+	    });
 	}
 
 	
@@ -52,9 +61,29 @@ export class VideoPlayerComponent implements OnInit {
 
 	}
 
+	setCurrentVideo(source : string){
+		this.api.pause();
+
+	    this.sources = new Array<Object>();
+
+	    this.sources.push({
+	      src: source,
+	    });
+
+	    this.api.getDefaultMedia().currentTime = 0;
+
+	}
+
 
 	onPlayerReady(api:VgAPI) {
 	    this.api = api;
+
+	    this.api.getDefaultMedia().subscriptions.ended.subscribe(
+	        () => {
+	            this.api.getDefaultMedia().currentTime = 0;
+	            
+	        }
+	    );
     
 
 		this.globalListenFunc = this.renderer.listen('document', 'keydown', e => {
@@ -111,12 +140,7 @@ export class VideoPlayerComponent implements OnInit {
 			
 		});
 	    
-	    this.api.getDefaultMedia().subscriptions.ended.subscribe(
-	        () => {
-	            this.api.getDefaultMedia().currentTime = 0;
-	            
-	        }
-	    );
+	    
 	}
 
 }

@@ -10,7 +10,7 @@
 
 }
 </style>
-<vg-player id="player_universal" (onPlayerReady)="onPlayerReady($event)"  (dblclick)="onDoubleClickFullscreen($event)" >
+<vg-player *ngIf="video" id="player_universal" (onPlayerReady)="onPlayerReady($event)"  (dblclick)="onDoubleClickFullscreen($event)" >
 	<vg-overlay-play  [style.z-index]="'1'" ></vg-overlay-play>
 	<vg-buffering></vg-buffering>
 
@@ -35,7 +35,7 @@
 		<vg-fullscreen [style.float]="'right'" ></vg-fullscreen>
 	</vg-controls>
 
-	<video #media [vgMedia]="media" id="singleVideo" preload="auto" crossorigin>
-		<source src="http://static.videogular.com/assets/videos/videogular.mp4" type="video/mp4">
+	<video #media [vgMedia]="media" [src]="video.video" id="singleVideo" preload="auto" autoplay="true" crossorigin>
+		<!-- <source  type="video/mp4"> -->
 	</video>
 </vg-player>
