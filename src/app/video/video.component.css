@@ -34,6 +34,10 @@
 	cursor: pointer;
 }
 
+#videos_suggestion_div div{
+	overflow: hidden;
+}
+
 @media screen and (max-width: 1444px) and (min-width: 961px) {
 	#video_logo_suggestions{
 		width: 92%;

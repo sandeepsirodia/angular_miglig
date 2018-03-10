@@ -77,6 +77,7 @@ export class VideoPlayerComponent implements OnInit {
 
 	onPlayerReady(api:VgAPI) {
 	    this.api = api;
+	    // this.api.play()
 	    
     
 
