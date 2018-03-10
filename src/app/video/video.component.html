@@ -1,0 +1,23 @@
+<div class="row" id="video_main">
+	<div class="col-lg-8 offset-lg-0 col-md-6 offset-md-1 col-12">
+		<app-video-player></app-video-player>
+	</div>
+	<div id="main_title" class="d-block d-sm-none col-11" *ngIf="video">
+		<p>{{video.title}}</p>
+	</div>
+	<div class="col-lg-4 col-md-5 col-12">
+		<div *ngFor="let a_video of videos" id="videos_suggestion_div" class="row">
+			<div class="col-md-6 col-6">
+				<img id="video_logo_suggestions" [routerLink]="['/video', a_video.pk]"  [src]="a_video.logo">
+			</div>
+			<div class="col-md-6 col-6">
+				<h6 [routerLink]="['/video', a_video.pk]" >{{a_video.title}}</h6>
+				<p [routerLink]="['/video', a_video.pk]" >{{a_video.description}}</p>
+			</div>
+		</div>
+	</div>
+	<div id="main_title" class="col-lg-8 offset-lg-0 col-md-6 offset-md-1 d-none d-sm-block" *ngIf="video">
+		<h5>{{video.title}}</h5>
+	</div>
+	
+</div>

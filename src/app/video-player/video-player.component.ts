@@ -77,13 +77,7 @@ export class VideoPlayerComponent implements OnInit {
 
 	onPlayerReady(api:VgAPI) {
 	    this.api = api;
-	    this.api.play()
-	    this.api.getDefaultMedia().subscriptions.ended.subscribe(
-	        () => {
-	            this.api.getDefaultMedia().currentTime = 0;
-	            
-	        }
-	    );
+	    
     
 
 		this.globalListenFunc = this.renderer.listen('document', 'keydown', e => {
@@ -140,6 +134,13 @@ export class VideoPlayerComponent implements OnInit {
 			
 		});
 	    
+
+	    this.api.getDefaultMedia().subscriptions.ended.subscribe(
+	        () => {
+	            this.api.getDefaultMedia().currentTime = 0;
+	            
+	        }
+	    );
 	    
 	}
 

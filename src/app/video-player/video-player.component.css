@@ -1,4 +1,4 @@
-#player_universal vg-controls vg-play-pause{
+/*#player_universal vg-controls vg-play-pause{
 	margin-top: 17px;
 	margin-left: 15px;
 	margin-bottom: 19px;
@@ -9,7 +9,6 @@
 
 #player_universal vg-controls vg-mute{
 	margin-top: 14px;
-	/*margin-left: 15px;*/
 	margin-bottom: 19px;
 	width: 17px;
     height: 20px;
@@ -25,12 +24,6 @@
 	margin-right: 15px;
 }
 
-/*
-:host ::ng-deep vg-controls vg-volume div div .volumeKnob{
-	cursor: pointer !important;
-}
-
-*/
 #player_universal vg-controls vg-playback-button{
 	margin-top: 18px;
 	margin-left: 15px;
@@ -106,9 +99,13 @@ vg-scrub-bar{
 
 
 }
+*/
 
+@media screen and (max-width: 725px) {
 
-@media screen and (max-width: 725px) {\
+	vg-time-display{
+		margin-left: 15px !important;
+	}
 
 	vg-mute{
 
@@ -117,6 +114,12 @@ vg-scrub-bar{
 	}
 
 	vg-volume{
+		width: 200px !important;
+	}
+
+
+
+	/*vg-volume{
 		width: 100%;
 		margin-left: -5px !important;
 		height: 20px !important;
@@ -136,25 +139,17 @@ vg-scrub-bar{
 		height: 15px;
 		background: none; 
 	    padding-top: 10px;
-    	/*margin-top: -5px;*/
-		/*height: 20px;*/
 	}
 	:host ::ng-deep vg-scrub-bar div{
 		background: rgba(90, 89, 89, 0.75);
 		z-index: -1;
 		height: 5px;
 	}
-	/*vg-scrub-bar-cue-points{
-		background: rgba(0, 0, 0, 0.75);
-	}
 	
-	vg-scrub-bar-buffering-time{
-		background: rgba(0, 0, 0, 0.75);
-	}*/
 	:host ::ng-deep vg-scrub-bar-current-time .background{
 	    background-color: white !important;
 	    z-index: 1;
-	}
+	}*/
 }
 *:focus {
     outline: none;
