@@ -46,7 +46,7 @@ export class ProfileComponent implements OnInit {
 			reader.readAsDataURL(file);
 			reader.onload = () => {
 				console.log(file)
-				this.apis.post_api({"token" : currentUser.token, "photo" : file}, "/user/update_profile_photos/").subscribe((data : any) => { console.log(data) })
+				this.apis.post_file({"token" : currentUser.token, "photo" : file}, "/user/update_profile_photos/").subscribe((data : any) => { console.log(data) })
 			};
 		}
 	}
