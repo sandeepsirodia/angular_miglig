@@ -38,6 +38,19 @@ export class ProfileComponent implements OnInit {
 		
 	}
 
+	onFileChange(event) {
+		let reader = new FileReader();
+		var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+		if(event.target.files && event.target.files.length > 0) {
+			let file = event.target.files[0];
+			reader.readAsDataURL(file);
+			reader.onload = () => {
+				console.log(file)
+				this.apis.post_api({"token" : currentUser.token, "photo" : file}, "/user/update_profile_photos/").subscribe((data : any) => { console.log(data) })
+			};
+		}
+	}
+
 	// onSubmit(f: NgForm) {
 	// 	this.formSubmitAttempt = true;
 	// 	if (this.profile_form.valid) {

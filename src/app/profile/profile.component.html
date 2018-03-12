@@ -3,7 +3,7 @@
 		<img *ngIf="profile.photo" [src]="profile.photo" data-toggle="modal" data-target="#user_photo" >
 		<img [hidden]="profile.photo" src="assets/no-thumbnail.png" >
 		<label for="file-upload" class=" overlay custom-file-upload">
-			<input id="file-upload" ng2FileSelect [uploader]="uploader" type="file"/>
+			<input id="file-upload" ng2FileSelect [uploader]="uploader" (change)="onFileChange($event)" type="file"/>
 		    <i class="fas fa-camera fa-2x"></i> 
 		</label>
 	</div>

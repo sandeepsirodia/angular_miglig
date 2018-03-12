@@ -43,6 +43,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
+import { AudioComponent } from './audio/audio.component';
 
 
 const appRoutes: Routes = [
@@ -107,6 +108,7 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     AlbumComponent,
     VideoComponent,
+    AudioComponent,
 
   ],
   imports: [
