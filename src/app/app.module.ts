@@ -39,6 +39,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AlbumComponent } from './album/album.component';
 import { VideoComponent } from './video/video.component';
 import { StarRatingModule } from 'angular-star-rating';
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
@@ -105,7 +106,8 @@ const appRoutes: Routes = [
     AppFieldErrorDisplayComponent,
     PageNotFoundComponent,
     AlbumComponent,
-    VideoComponent
+    VideoComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -126,6 +128,7 @@ const appRoutes: Routes = [
     VgStreamingModule,
     HttpClientModule,
     NgxCarouselModule,
+    FileUploadModule,
     StarRatingModule.forRoot(),
 
   ],

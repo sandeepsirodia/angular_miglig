@@ -1,5 +1,70 @@
 <div class="row" id="main_profile" *ngIf="profile">
-	<div class="col-lg-3 offset-lg-1">
-		<img *ngIf="profile.photo" [src]="profile.photo">
+	<div class=" image col-md-6 offset-md-1 col-lg-5 offset-lg-1 col-xl-4 col-12" >
+		<img *ngIf="profile.photo" [src]="profile.photo" data-toggle="modal" data-target="#user_photo" >
+		<img [hidden]="profile.photo" src="assets/no-thumbnail.png" >
+		<label for="file-upload" class=" overlay custom-file-upload">
+			<input id="file-upload" ng2FileSelect [uploader]="uploader" type="file"/>
+		    <i class="fas fa-camera fa-2x"></i> 
+		</label>
+	</div>
+	<div class="col-xl-5 col-lg-5 col-12 row" >
+		<div class="col-12 col-lg-3 d-none d-sm-block ">
+			<p>Name</p>
+			<p>Mobile</p>
+			<p>Email</p>
+		</div >
+		<div class="col-12 col-lg-8 ">
+			<p>{{profile.name | titlecase}}</p>
+			<p>{{profile.mobile}}</p>
+			<p>{{profile.email}}</p>
+			
+		</div >
+	</div>
+	<div class="col-md-1 offset-md-7">
+		<button data-toggle="modal" type="button" data-target="#exampleModal" class="btn btn-light" role="button">Edit</button>
+	</div>
+
+	<div id="user_photo" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<img *ngIf="profile.photo" [src]="profile.photo">
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<div id="exampleModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+		<div class="modal-header">
+			<h5 class="modal-title">Profile Form</h5>
+			<button id="closeExampleModal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">×</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			<!-- <form class="form-horizontal " #edit_profile="ngForm" [formGroup]="profile_form">
+				<div class="form-group">
+					<input type="text" id="profile_name" ngModel  placeholder="Name"  class="form-control" formControlName="profile_name">
+				</div>
+
+				<div class="form-group">
+					<div >
+						<input type="text" id="profile_mobile" ngModel  placeholder="Mobile"  class="form-control" formControlName="profile_mobile">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div >
+						<input type="text" id="profile_email" ngModel  placeholder="Email"  class="form-control" formControlName="profile_email">
+					</div>
+				</div>			
+				<button class="btn btn-primary" [disabled]="!profile_form.valid" (click)="onSubmit(edit_profile)">Submit</button>
+			</form> -->
+		</div>
 	</div>
 </div>

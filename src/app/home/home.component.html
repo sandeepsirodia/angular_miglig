@@ -2,12 +2,12 @@
 
 	<div  style="margin-top: 2%;" class="col-sm-10 offset-sm-1 col-xs-12">
 	<h3><label> Trending Videos</label></h3>
-	<ngx-carousel
+	<ngx-carousel *ngIf="home_tiles"
 	  [inputs]="carouselTile"
 	  (carouselLoad)="carouselTileLoad($event)">
 
-	        <ngx-tile routerLink="/video/1" NgxCarouselItem *ngFor="let Tile of carouselTileItems">
-	            <h1>{{Tile + 1}}</h1>
+	        <ngx-tile [routerLink]="['/video', Tile.pk]" NgxCarouselItem *ngFor="let Tile of home_tiles">
+	            <img [src]="Tile.logo" style="width: 330px; height: 250px;">
 	        </ngx-tile>
 
 	      <button NgxCarouselPrev class='leftRs'>&lt;</button>
@@ -16,12 +16,12 @@
 	</div>
 	<div style="margin-top: 2%;" class="col-sm-10 offset-sm-1 col-xs-12">
 	<h3><label> New Videos</label></h3>
-	<ngx-carousel
+	<ngx-carousel *ngIf="home_tiles"
 	  [inputs]="carouselTile"
 	  (carouselLoad)="carouselTileLoad($event)">
 
-	        <ngx-tile routerLink="/video/1"  NgxCarouselItem *ngFor="let Tile of carouselTileItems">
-	            <h1>{{Tile + 1}}</h1>
+	        <ngx-tile [routerLink]="['/video', Tile.pk]" NgxCarouselItem *ngFor="let Tile of home_tiles">
+	            <img [src]="Tile.logo" style="width: 330px; height: 250px;">
 	        </ngx-tile>
 
 	      <button NgxCarouselPrev class='leftRs'>&lt;</button>
@@ -30,12 +30,12 @@
 	</div>
 	<div style="margin-top: 2%;" class="col-sm-10 offset-sm-1 col-xs-12">
 	<h3><label> Popular Videos</label></h3>
-	<ngx-carousel
+	<ngx-carousel *ngIf="home_tiles"
 	  [inputs]="carouselTile"
 	  (carouselLoad)="carouselTileLoad($event)">
 
-	        <ngx-tile routerLink="/video/1" NgxCarouselItem *ngFor="let Tile of carouselTileItems">
-	            <h1>{{Tile + 1}}</h1>
+	        <ngx-tile [routerLink]="['/video', Tile.pk]" NgxCarouselItem *ngFor="let Tile of home_tiles">
+	            <img [src]="Tile.logo" style="width: 330px; height: 250px;">
 	        </ngx-tile>
 
 	      <button NgxCarouselPrev class='leftRs'>&lt;</button>
@@ -44,12 +44,12 @@
 	</div>
 	<div style="margin-top: 2%;" class="col-sm-10 offset-sm-1 col-xs-12">
 	<h3><label> All time hits</label></h3>
-	<ngx-carousel
+	<ngx-carousel *ngIf="home_tiles"
 	  [inputs]="carouselTile"
 	  (carouselLoad)="carouselTileLoad($event)">
 
-	        <ngx-tile routerLink="/video/1" NgxCarouselItem *ngFor="let Tile of carouselTileItems">
-	            <h1>{{Tile + 1}}</h1>
+	        <ngx-tile [routerLink]="['/video', Tile.pk]" NgxCarouselItem *ngFor="let Tile of home_tiles">
+	            <img [src]="Tile.logo" style="width: 330px; height: 250px;">
 	        </ngx-tile>
 
 	      <button NgxCarouselPrev class='leftRs'>&lt;</button>

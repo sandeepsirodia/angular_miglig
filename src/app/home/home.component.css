@@ -55,3 +55,8 @@ ngx-carousel{
     display: none;
 }
 
+ngx-tile{
+    width: 350px !important;
+    height: 230px !important;
+}
+

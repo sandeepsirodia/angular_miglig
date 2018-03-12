@@ -11,6 +11,7 @@ import { Router} from '@angular/router';
 export class HomeComponent implements OnInit {
   public carouselOne: NgxCarousel;
   public carouselTileItems: Array<any>;
+  public home_tiles: Array<any>;
   public carouselTile: NgxCarousel;
   
   public imageSources: string[] = [
@@ -44,6 +45,12 @@ export class HomeComponent implements OnInit {
       touch: true,
       easing: 'ease'
     }
+
+    this.apis.get_api("/content/video/").subscribe((data: any) => {  
+
+      this.home_tiles = data.data;
+      console.log(data.data)
+    })
 
   }
 
