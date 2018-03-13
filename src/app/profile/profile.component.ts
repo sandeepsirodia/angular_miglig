@@ -18,7 +18,7 @@ export class ProfileComponent implements OnInit {
 	
 	private data :any; 
 	public profile :any[] = []; 
-	public formData:FormData = new FormData();
+	// public formData:FormData = new FormData();
 	public profile_form: FormGroup;
 	private formSubmitAttempt: boolean;
 	public uploader:FileUploader = new FileUploader({url: "URL", itemAlias: 'photo'});
@@ -40,13 +40,29 @@ export class ProfileComponent implements OnInit {
 
 	onFileChange(event) {
 		let reader = new FileReader();
+		var request = new XMLHttpRequest();
+		request.onreadystatechange = function() {
+	    if (request.readyState == XMLHttpRequest.DONE) {
+	    	window.location.reload();
+		        // console.log(request.responseText);
+		        // if (request.responseText["result"] == 1) {
+		        // 	// code...
+		        // }
+		    }
+		}
+		
 		var currentUser = JSON.parse(localStorage.getItem('currentUser'));
 		if(event.target.files && event.target.files.length > 0) {
 			let file = event.target.files[0];
+			var formData = new FormData();
+			
 			reader.readAsDataURL(file);
 			reader.onload = () => {
-				console.log(file)
-				this.apis.post_file({"token" : currentUser.token, "photo" : file}, "/user/update_profile_photos/").subscribe((data : any) => { console.log(data) })
+				formData.append('photo', file);
+				formData.append('token', currentUser.token);
+				request.open("POST", "https://api.miglig.com/api/user/update_profile_photos/");
+				request.send(formData)
+				// this.apis.post_file({"token" : currentUser.token, "photo" : file}, "/user/update_profile_photos/").subscribe((data : any) => { console.log(data) })
 			};
 		}
 	}
